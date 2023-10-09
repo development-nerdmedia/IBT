@@ -1,10 +1,14 @@
 MyApp = {
   loadingPrincipal: {
     init: function () {
+      document.querySelector("body").classList.add("scrollHidden");
       setTimeout(() => {
         document.querySelector(".loading").classList.add("active");
         setTimeout(() => {
           document.querySelector(".loading").classList.add("ocultar");
+          setTimeout(() => {
+            document.querySelector("body").classList.remove("scrollHidden");            
+          }, 1500);
         }, 1500);
       }, 500);
     }
@@ -15,6 +19,23 @@ MyApp = {
         offset_top: 0,
         offset_right: 52,
       });
+
+      /* gsap para la animacion */
+
+      var content = document.querySelector("section.home");
+      var imgElement = document.querySelector("img.animacion");
+
+      var sticky = gsap.timeline({
+        scrollTrigger: {
+          //markers: true,
+          trigger: content,
+          start: '0% 0%',
+          end: '50% 50%',
+          scrub: true,
+        },
+      });
+      sticky.to(imgElement, { "clip-path": "inset(0%)" })
+
     }
   },
   swiperNegocios: {
@@ -27,6 +48,40 @@ MyApp = {
           disableOnInteraction: false,
         },
         loop: true,
+        breakpoints: {
+          1601: {
+            slidesPerView: 4.29,
+          },
+          1441: {
+            slidesPerView: 3.5,
+          },
+          1281: {
+            slidesPerView: 3.12,
+          },
+          1025: {
+            slidesPerView: 2.6,
+          },
+          769: {
+            slidesPerView: 2.4,
+            spaceBetween: 30,
+          },
+          600: {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+          },
+          501: {
+            slidesPerView: 1.8,
+            spaceBetween: 25,
+          },
+          401: {
+            slidesPerView: 1.38,
+            spaceBetween: 25,
+          },
+          0: {
+            slidesPerView: 1.2,
+            spaceBetween: 25,
+          },
+        },
       });
     }
   },
@@ -180,6 +235,10 @@ MyApp = {
     init: function () {
 
       document.querySelector(".cabecera").closest(".itemTab").classList.add("open");
+      const firstTab = document.querySelector("section.oficinas .part2 .itemTab .mapa").innerHTML;
+      const fondoElement = document.querySelector("section.oficinas .part1 .img .fondo");
+      fondoElement.innerHTML = firstTab;
+
       const cabeceras = document.querySelectorAll('.cabecera');
 
       cabeceras.forEach(cabecera => {
@@ -189,6 +248,11 @@ MyApp = {
             itemTab.classList.remove('open');
           });
           cabecera.parentElement.classList.add('open');
+
+          const mapaElement = cabecera.parentElement.querySelector('.mapa');
+          if (mapaElement) {
+            fondoElement.innerHTML = mapaElement.innerHTML;
+          }
         })
       });
 
@@ -196,6 +260,8 @@ MyApp = {
         offset_top: 0,
         offset_right: 52,
       });
+
+
 
     }
   },
@@ -230,8 +296,8 @@ MyApp = {
       function validateInputPoliticas(e) {
         if (!inputPoliticas.ckecked) {
           inputPoliticas.classList.add("error");
-        }else{
-          inputPoliticas.classList.remove("error"); 
+        } else {
+          inputPoliticas.classList.remove("error");
         }
       }
 
@@ -243,13 +309,21 @@ MyApp = {
         }
       })
     }
-  }
+  },
+  desplegable: {
+    init: function () {
+      document.addEventListener("click", function (e) {
+        if (e.target.closest("footer .desplegable .title")) {
+          e.target.closest('.desplegable').classList.toggle("open");
+        }
+      })
+    }
+  },
 }
 
 if ($('body.page-home').length > 0) {
   MyApp.menuDinamico.init();
 }
-
 
 if ($('.loading').length > 0) {
   MyApp.loadingPrincipal.init();
@@ -283,6 +357,9 @@ if ($('.formulario').length > 0) {
   MyApp.validate.init();
 }
 
+if ($('footer .desplegable').length > 0) {
+  MyApp.desplegable.init();
+}
 
 
 
