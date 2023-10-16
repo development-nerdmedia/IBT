@@ -1719,7 +1719,7 @@ section.caracteristicas .swiper-pagination {
   section.mainContacto .container .part1 .formulario textarea {
     height: 80px; }
   section.mainContacto .container .part2 .contentImg img {
-    width: 80%; }
+    width: 94%; }
   section.mainContacto .container .part2 .contentImg {
     margin-bottom: 10px; }
   /* end 1280 */ }
@@ -1766,7 +1766,10 @@ section.caracteristicas .swiper-pagination {
     stroke: #fff; }
   body.page-home header.bVLcxx .menuMovil svg path,
   body.page-home header.leoCdG .menuMovil svg path {
-    stroke: #00355F; }
+    stroke: #007af3; }
+  body.page-home header.bVLcxx .menuMovil svg.close path,
+  body.page-home header.leoCdG .menuMovil svg.close path {
+    stroke: #fff; }
   body.page-home header.bVLcxx .navigation .navi .idiomas::before,
   body.page-home header.leoCdG .navigation .navi .idiomas::before {
     background-color: #00355F; }
