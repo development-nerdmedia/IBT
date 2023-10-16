@@ -1498,7 +1498,7 @@ section.mainContacto {
             color: #00355f;
           }
           &.error {
-            border: 1px solid #b36700;
+            border: 1px solid #007af3;
           }
         }
         .checkbox-box {
@@ -1512,9 +1512,12 @@ section.mainContacto {
             top: -1px;
             position: relative;
             padding: 0;
+            border: 1px solid #007af3;
+            border: none;
+            background-color: #fff;
             &.error {
-              border: 1px solid #b36700;
-              outline: 1px solid #ff9300;
+              border: 1px solid #007af3;
+              outline: 1px solid #007af3;
             }
           }
           label {
@@ -1878,7 +1881,8 @@ footer .desplegable,
 section.listaBlog .categorias .container .lista select,
 section.noticiasRelacionadas .swiper .swiper-pagination,
 section.MenuMovilSection,
-section.experiencia .fondo.movil{
+section.experiencia .fondo.movil,
+section.caracteristicas .swiper-pagination{
   display: none;
 }
 
@@ -2329,6 +2333,9 @@ section.experiencia .fondo.movil{
 }
 
 @media (max-width: 1024px) {
+  section.caracteristicas .swiper-pagination{
+    display: block;
+  }
   .container{
     width: 91.2%;
   }
@@ -2867,6 +2874,9 @@ section.experiencia .fondo.movil{
     flex-wrap: wrap;
     align-items: center;
     grid-column-gap: 10px;
+  }
+  section.bannerNegociosInterna .container{
+    grid-gap: 20px;
   }
 }
 

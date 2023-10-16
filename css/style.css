@@ -1220,7 +1220,7 @@ section.mainContacto {
             color: #00355f; }
           section.mainContacto .container .part1 .formulario input.error,
           section.mainContacto .container .part1 .formulario textarea.error {
-            border: 1px solid #b36700; }
+            border: 1px solid #007af3; }
         section.mainContacto .container .part1 .formulario .checkbox-box {
           display: flex;
           align-items: center; }
@@ -1231,10 +1231,13 @@ section.mainContacto {
             outline: none;
             top: -1px;
             position: relative;
-            padding: 0; }
+            padding: 0;
+            border: 1px solid #007af3;
+            border: none;
+            background-color: #fff; }
             section.mainContacto .container .part1 .formulario .checkbox-box input.error {
-              border: 1px solid #b36700;
-              outline: 1px solid #ff9300; }
+              border: 1px solid #007af3;
+              outline: 1px solid #007af3; }
           section.mainContacto .container .part1 .formulario .checkbox-box label {
             flex-shrink: 0;
             width: 18px;
@@ -1522,7 +1525,8 @@ footer .desplegable,
 section.listaBlog .categorias .container .lista select,
 section.noticiasRelacionadas .swiper .swiper-pagination,
 section.MenuMovilSection,
-section.experiencia .fondo.movil {
+section.experiencia .fondo.movil,
+section.caracteristicas .swiper-pagination {
   display: none; }
 
 @media (max-width: 1800px) {
@@ -1853,6 +1857,8 @@ section.experiencia .fondo.movil {
   /* end 1200 */ }
 
 @media (max-width: 1024px) {
+  section.caracteristicas .swiper-pagination {
+    display: block; }
   .container {
     width: 91.2%; }
   section.bajada .container .title {
@@ -2251,7 +2257,9 @@ section.experiencia .fondo.movil {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    grid-column-gap: 10px; } }
+    grid-column-gap: 10px; }
+  section.bannerNegociosInterna .container {
+    grid-gap: 20px; } }
 
 @media (max-width: 600px) {
   section.bajada .container .contentText p {
