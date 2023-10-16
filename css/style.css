@@ -396,7 +396,9 @@ section.home {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        z-index: 1;
+        aspect-ratio: auto 1920 / 963; }
     section.home .fondo .animacion {
       clip-path: inset(35%);
       z-index: 1; }
