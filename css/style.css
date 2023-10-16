@@ -1993,6 +1993,8 @@ section.caracteristicas .swiper-pagination {
     width: 100%; }
   section.mainContacto .container .part1 .formulario button {
     margin-top: 10px; }
+  section.caracteristicas .swiper-pagination {
+    display: block; }
   /* 1024 end */ }
 
 @media (max-width: 950px) {

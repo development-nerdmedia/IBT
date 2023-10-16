@@ -408,14 +408,18 @@ MyApp = {
           delay: 2000,
           disableOnInteraction: true,
         },
+        */
         pagination: {
           el: ".swiperCaracteristicas .swiper-pagination",
           dynamicBullets: true,
         },
-        */
         breakpoints: {
           1025: {
             slidesPerView: 3,
+            pagination: {
+              el: "",
+              dynamicBullets: true,
+            },
           },
           951: {
             slidesPerView: 2.8,  
