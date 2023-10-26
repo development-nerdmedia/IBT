@@ -23,22 +23,23 @@ body.scrollHidden{
   width: 85%;
   max-width: 1270px; }
 
-.wpcf7-not-valid-tip,
-.wpcf7 form .wpcf7-response-output,
-.otgs-development-site-front-end {
-  display: none !important; }
-
-.wpcf7-list-item {
-  margin: 0 !important; }
+  .wpcf7-not-valid-tip,
+  .wpcf7 form .wpcf7-response-output,
+  .otgs-development-site-front-end{
+    display: none !important;
+  }
+  .wpcf7-list-item{
+    margin: 0 !important;
+  }
 
 .container2 {
+  /*
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1683px;
+    */
   margin-left: 118.5px;
   margin-left: 6.172vw; }
-
-.container4 {
-  margin: 0 auto;
-  width: 85%;
-  max-width: 1650px; }
 
 a {
   text-decoration: none;
@@ -549,6 +550,7 @@ section.negociosHome {
 
 .itemNegocios {
   position: relative;
+  margin: 0 20px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25); }
   .itemNegocios a {
     display: flex;
@@ -766,8 +768,7 @@ section.experiencia {
       width: 33.34%;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      align-items: start; }
+      align-items: center; }
       section.experiencia .contadores .contador div {
         display: flex;
         justify-content: center;
@@ -776,7 +777,7 @@ section.experiencia {
     section.experiencia .contadores h3 {
       color: #007af3;
       font-family: var(--fuente-vietnam);
-      font-size: 50px;
+      font-size: 80px;
       font-weight: 700; }
       section.experiencia .contadores h3 span {
         color: #00355f; }
@@ -785,8 +786,7 @@ section.experiencia {
       color: #00355f;
       font-size: 24px;
       font-style: normal;
-      font-weight: 500;
-      text-align: center; }
+      font-weight: 500; }
     section.experiencia .contadores:before {
       content: "";
       position: absolute;
@@ -923,19 +923,16 @@ section.caracteristicas {
         font-size: 24px;
         font-weight: 600; }
 
-section.bannerNegociosInterna,
-section.bannerNegociosInterna2 {
+section.bannerNegociosInterna {
   padding: 100px 0;
   position: relative;
   overflow: hidden;
   background-color: rgba(179, 216, 252, 0.8); }
-  section.bannerNegociosInterna .container,
-  section.bannerNegociosInterna2 .container {
+  section.bannerNegociosInterna .container {
     display: flex;
     align-items: center;
     justify-content: space-between; }
-    section.bannerNegociosInterna .container a,
-    section.bannerNegociosInterna2 .container a {
+    section.bannerNegociosInterna .container a {
       margin-right: 5px;
       color: #fff;
       font-family: var(--fuente-roboto);
@@ -949,19 +946,15 @@ section.bannerNegociosInterna2 {
       width: fit-content;
       -webkit-transition: all 0.25s linear;
       transition: all 0.25s linear; }
-      section.bannerNegociosInterna .container a img,
-      section.bannerNegociosInterna2 .container a img {
+      section.bannerNegociosInterna .container a img {
         margin-left: 10px;
         -webkit-transition: all 0.25s linear;
         transition: all 0.25s linear; }
-      section.bannerNegociosInterna .container a:hover,
-      section.bannerNegociosInterna2 .container a:hover {
+      section.bannerNegociosInterna .container a:hover {
         margin-right: 0px; }
-        section.bannerNegociosInterna .container a:hover img,
-        section.bannerNegociosInterna2 .container a:hover img {
+        section.bannerNegociosInterna .container a:hover img {
           margin-left: 15px; }
-  section.bannerNegociosInterna img.fondo,
-  section.bannerNegociosInterna2 img.fondo {
+  section.bannerNegociosInterna img.fondo {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -971,30 +964,12 @@ section.bannerNegociosInterna2 {
     object-fit: cover;
     width: 100%;
     z-index: -1; }
-  section.bannerNegociosInterna h2,
-  section.bannerNegociosInterna2 h2 {
+  section.bannerNegociosInterna h2 {
     color: #00355f;
     font-size: 35px;
     font-weight: 500;
     width: 66%;
     font-family: var(--fuente-vietnam); }
-
-section.bannerNegociosInterna2 .container div:first-child {
-  width: 66%; }
-  section.bannerNegociosInterna2 .container div:first-child span {
-    display: block;
-    color: #00355F;
-    font-family: var(--fuente-roboto);
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    margin-bottom: 10px; }
-  section.bannerNegociosInterna2 .container div:first-child h2 {
-    width: 100% !important;
-    font-weight: 700; }
-
-section.bannerNegociosInterna2 .container div:last-child {
-  flex-shrink: 0; }
 
 section.blogTitle {
   padding: 100px 0; }
@@ -1107,12 +1082,6 @@ section.listaBlog .btn button {
     font-family: var(--fuente-vietnam);
     font-size: 24px;
     font-weight: 500; }
-  .itemArticulo .contentText h3 {
-    color: #00355F;
-    font-family: var(--fuente-vietnam);
-    font-size: 24px;
-    font-weight: 700;
-    margin: 10px 0; }
 
 .itemArticulo:hover .contentText {
   background-color: #00355f; }
@@ -1124,7 +1093,7 @@ section.listaBlog .btn button {
   transform: scale(1.08); }
 
 .itemArticulo:hover span,
-.itemArticulo:hover p, .itemArticulo:hover h3 {
+.itemArticulo:hover p {
   color: #fff; }
 
 section.articuloTitle {
@@ -1165,19 +1134,18 @@ section.contentInfoArticulo {
       border: 1px solid #007af3;
       width: fit-content;
       position: relative; }
-      section.contentInfoArticulo .part1 .redesCompartir a {
-        display: flex; }
-        section.contentInfoArticulo .part1 .redesCompartir a img {
-          transition: 0.2s linear; }
-        section.contentInfoArticulo .part1 .redesCompartir a:hover img {
-          transform: scale(1.1); }
+      section.contentInfoArticulo .part1 .redesCompartir a,
       section.contentInfoArticulo .part1 .redesCompartir button {
-        display: flex;
-        background: #fff;
-        border: none;
-        cursor: pointer; }
+        display: flex; }
+        section.contentInfoArticulo .part1 .redesCompartir button{
+          background: #fff;
+          border: none;
+          cursor: pointer;
+        }
+        section.contentInfoArticulo .part1 .redesCompartir a img,
         section.contentInfoArticulo .part1 .redesCompartir button img {
           transition: 0.2s linear; }
+        section.contentInfoArticulo .part1 .redesCompartir a:hover img,
         section.contentInfoArticulo .part1 .redesCompartir button:hover img {
           transform: scale(1.1); }
       section.contentInfoArticulo .part1 .redesCompartir::before {
@@ -1293,99 +1261,6 @@ section.noticiasRelacionadas {
       section.noticiasRelacionadas .contentSlider .part2 .swiper-wrapper {
         align-items: stretch; }
 
-body.page-internaPortafolio section.noticiasRelacionadas {
-  padding: 100px 0; }
-
-section.accionSocial {
-  padding: 100px 0; }
-  section.accionSocial .container h2 {
-    color: #00355F;
-    font-family: var(--fuente-vietnam);
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 700; }
-  section.accionSocial .container .content {
-    display: flex;
-    grid-gap: 70px;
-    margin-top: 30px; }
-    section.accionSocial .container .content .contentText {
-      width: 50%; }
-      section.accionSocial .container .content .contentText p {
-        color: #00355F;
-        font-family: var(--fuente-roboto);
-        font-size: 16px;
-        font-weight: 300;
-        margin-bottom: 20px; }
-      section.accionSocial .container .content .contentText p:last-child {
-        margin-bottom: 0; }
-    section.accionSocial .container .content .contentImg {
-      width: 50%;
-      overflow: hidden; }
-      section.accionSocial .container .content .contentImg img {
-        width: 100%; }
-
-section.bannerSocial {
-  background-color: #B3D8FC; }
-  section.bannerSocial .container {
-    display: flex;
-    justify-content: space-between; }
-  section.bannerSocial .part1 {
-    padding: 100px 0;
-    padding-right: 130px;
-    width: 60%; }
-    section.bannerSocial .part1 h2 {
-      color: #00355F;
-      font-size: 35px;
-      font-weight: 700; }
-    section.bannerSocial .part1 p {
-      color: #00355F;
-      font-family: var(--fuente-roboto);
-      font-size: 16px;
-      font-weight: 300;
-      margin-top: 20px; }
-    section.bannerSocial .part1 a {
-      margin-top: 20px;
-      color: #fff;
-      font-family: var(--fuente-roboto);
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 500;
-      background-color: var(--color-dorado);
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      width: fit-content;
-      -webkit-transition: all 0.25s linear;
-      transition: all 0.25s linear;
-      border: none; }
-      section.bannerSocial .part1 a img {
-        margin-left: 10px;
-        -webkit-transition: all 0.25s linear;
-        transition: all 0.25s linear; }
-      section.bannerSocial .part1 a:hover img {
-        margin-left: 15px; }
-  section.bannerSocial .part2 {
-    display: flex;
-    justify-content: flex-end;
-    width: 40%;
-    position: relative; }
-    section.bannerSocial .part2 img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%; }
-
-body.page-sostenibilidad section.noticiasRelacionadas {
-  padding: 100px 0; }
-  body.page-sostenibilidad section.noticiasRelacionadas h2 {
-    text-align: start; }
-
-body.page-sostenibilidad section.proyectosInterna .part1 {
-  padding-top: 0; }
-
-body.page-sostenibilidad section.bannerNosotros:nth-child(2) {
-  padding-bottom: 0px; }
-
 @keyframes move {
   0% {
     background-position-x: 20px; }
@@ -1480,10 +1355,11 @@ section.mainContacto {
             font-size: 16px;
             font-style: normal;
             font-weight: 300; }
+            section.mainContacto .container .part1 .formulario .checkbox-box p:first-child{
+              margin-left: 0;
+            }
             section.mainContacto .container .part1 .formulario .checkbox-box p a {
               text-decoration: underline; }
-            section.mainContacto .container .part1 .formulario .checkbox-box p:first-child {
-              margin-left: 0; }
         section.mainContacto .container .part1 .formulario textarea {
           height: 114px; }
         section.mainContacto .container .part1 .formulario button {
@@ -1795,26 +1671,23 @@ section.aviso {
 section.tabs {
   background-color: #e6f2fe;
   margin-top: 100px; }
-  section.tabs .container {
-    overflow: hidden; }
-  section.tabs .enlaces {
+  section.tabs ul {
     padding: 20px 0;
     display: flex;
     justify-content: center; }
-    section.tabs .enlaces a {
+    section.tabs ul li {
       display: inline-block;
       margin: 0 50px;
       color: #bfcbd7;
       font-family: var(--fuente-vietnam);
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 500;
       cursor: pointer;
-      position: relative;
-      text-align: center; }
-      section.tabs .enlaces a.select {
+      position: relative; }
+      section.tabs ul li.select {
         color: #00355f;
         font-weight: 700; }
-        section.tabs .enlaces a.select::before {
+        section.tabs ul li.select::before {
           content: "";
           position: absolute;
           bottom: -20px;
@@ -1822,498 +1695,47 @@ section.tabs {
           width: 100%;
           height: 3px;
           background-color: #007af3; }
-    section.tabs .enlaces a:first-child {
+    section.tabs ul li:first-child {
       margin-left: 0; }
-    section.tabs .enlaces a:last-child {
+    section.tabs ul li:first-last {
       margin-right: 0; }
 
-body.NuestraCultura section.noticiasRelacionadas {
-  background: #E6F2FE;
-  padding-top: 100px; }
-
-body.NuestraCultura section.proyectosInterna .part1 ul li {
-  font-family: var(--fuente-vietnam);
-  font-size: 24px;
-  font-weight: 700;
-  padding-bottom: 30px;
-  margin: 30px 0; }
-  body.NuestraCultura section.proyectosInterna .part1 ul li::before {
-    top: 11px; }
-  body.NuestraCultura section.proyectosInterna .part1 ul li::after {
-    content: '';
-    position: absolute;
-    background-color: #00355F;
-    height: 1px;
-    width: 100%;
-    bottom: 0;
-    left: 0; }
-  body.NuestraCultura section.proyectosInterna .part1 ul li:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0; }
-    body.NuestraCultura section.proyectosInterna .part1 ul li:last-child::after {
-      content: none; }
-  body.NuestraCultura section.proyectosInterna .part1 ul li ul {
-    margin-left: 0; }
-    body.NuestraCultura section.proyectosInterna .part1 ul li ul li {
-      padding-bottom: 0;
-      margin: 0;
-      margin-top: 15px;
-      font-family: var(--fuente-roboto);
-      font-size: 20px;
-      font-weight: 300; }
-      body.NuestraCultura section.proyectosInterna .part1 ul li ul li::before, body.NuestraCultura section.proyectosInterna .part1 ul li ul li::after {
-        content: none; }
-
 section.infoEmpresa {
-  padding-bottom: 100px; }
+  padding: 30px 0 100px; }
   section.infoEmpresa .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1/5fr);
-    grid-template-rows: repeat(3, 1/5fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px; }
+    display: flex;
+    grid-gap: 30px; }
     section.infoEmpresa .container .contentImg {
-      display: flex;
-      overflow: hidden;
-      position: relative; }
+      display: flex; }
       section.infoEmpresa .container .contentImg img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-height: 100%;
-        min-width: 100%;
-        object-fit: cover;
-        width: 100%;
-        z-index: -1; }
+        width: 100%; }
     section.infoEmpresa .container .text {
-      background-color: #E6F2FE;
-      padding: 20px 25px;
-      overflow: hidden; }
+      padding: 20px 24px;
+      background-color: #e6f2fe; }
       section.infoEmpresa .container .text h3 {
-        color: #00355F;
+        color: #00355f;
         font-family: var(--fuente-vietnam);
         font-size: 30px;
         font-weight: 700; }
       section.infoEmpresa .container .text p {
-        color: #00355F;
+        color: #00355f;
         font-family: var(--fuente-roboto);
         font-size: 16px;
         font-weight: 300;
         margin-top: 10px; }
-    section.infoEmpresa .container .part1 {
-      grid-area: 1 / 1 / 3 / 2;
-      display: flex;
-      flex-direction: column; }
-      section.infoEmpresa .container .part1 .contentImg {
-        flex-shrink: 0;
-        height: 400px; }
-      section.infoEmpresa .container .part1 .text {
-        height: 100%; }
     section.infoEmpresa .container .part2 {
       display: flex;
-      grid-area: 1 / 2 / 2 / 4; }
-      section.infoEmpresa .container .part2 .contentImg {
-        width: 50%; }
-      section.infoEmpresa .container .part2 .text {
-        width: 50%; }
-    section.infoEmpresa .container .part3 {
-      display: flex;
-      grid-area: 2 / 2 / 3 / 4; }
-      section.infoEmpresa .container .part3 .contentImg {
-        width: 50%; }
-      section.infoEmpresa .container .part3 .text {
-        width: 50%; }
-    section.infoEmpresa .container .part4 {
-      grid-area: 3 / 1 / 4 / 4;
-      padding: 50px 20px;
-      background-color: #E6F2FE;
-      display: flex;
-      align-items: center; }
-      section.infoEmpresa .container .part4 .title {
-        flex-shrink: 0; }
-        section.infoEmpresa .container .part4 .title h3 {
-          color: #003262;
-          font-family: var(--fuente-vietnam);
-          font-size: 30px;
-          font-weight: 700; }
-      section.infoEmpresa .container .part4 .imgs {
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%; }
-        section.infoEmpresa .container .part4 .imgs div {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          grid-gap: 10px; }
-          section.infoEmpresa .container .part4 .imgs div p {
-            color: #003262;
-            font-family: var(--fuente-vietnam);
-            font-size: 20px;
-            font-weight: 500; }
-          section.infoEmpresa .container .part4 .imgs div img {
-            transition: all 0.4s linear; }
-            section.infoEmpresa .container .part4 .imgs div img:hover {
-              transform: translateY(-10px); }
-
-.itemPilares {
-  position: relative;
-  display: flex; }
-  .itemPilares a {
-    display: flex;
-    overflow: hidden; }
-  .itemPilares img {
-    width: 100%;
-    z-index: -1; }
-  .itemPilares .text {
-    position: absolute;
-    bottom: 0;
-    background-color: #B3D8FC;
-    padding: 15px 20px;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
-    z-index: 1;
-    left: -1px;
-    width: 100.3%; }
-    .itemPilares .text h3 {
-      color: #00355F;
-      font-family: var(--fuente-vietnam);
-      font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 0;
-      padding-right: 50px;
-      -webkit-transition: all 0.4s;
-      transition: all 0.4s; }
-    .itemPilares .text p {
-      color: #00355F;
-      font-family: var(--fuente-roboto);
-      font-size: 16px;
-      font-weight: 300;
-      height: 0;
-      overflow: hidden;
-      -webkit-transition: all 0.4s;
-      transition: all 0.4s; }
-    .itemPilares .text .flecha {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: #00355F;
-      padding: 20px; }
-      .itemPilares .text .flecha img {
-        transform: rotate(90deg); }
-  .itemPilares:hover .text h3 {
-    margin-bottom: 25px; }
-  .itemPilares:hover .text p {
-    height: auto; }
-  .itemPilares:hover .text.inicial {
-    opacity: 0; }
-  .itemPilares:hover .filtro {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(0deg, rgba(0, 53, 95, 0.3) 0%, rgba(0, 53, 95, 0.3) 100%); }
-  .itemPilares:hover .flecha img {
-    transform: rotate(-90deg); }
-
-section.Equipo {
-  padding: 100px 0; }
-  section.Equipo h2 {
-    font-family: var(--fuente-vietnam);
-    font-size: 35px;
-    font-weight: 700;
-    text-align: center; }
-  section.Equipo .listEquipo {
-    margin-top: 35px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px; }
-  section.Equipo:last-child {
-    padding-top: 0; }
-  section.Equipo .btn button {
-    display: none;
-    margin: 0 auto;
-    margin-top: 50px;
-    width: 135px;
-    border: none; }
-    section.Equipo .btn button img {
-      transform: rotate(90deg); }
-
-.itemEquipo .contentImg {
-  display: flex;
-  overflow: hidden; }
-  .itemEquipo .contentImg img {
-    width: 100%;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s; }
-
-.itemEquipo .contentText {
-  background: #E6F2FE;
-  padding: 20px 25px; }
-  .itemEquipo .contentText .title {
-    display: flex;
-    justify-content: space-between;
-    grid-gap: 20px;
-    align-items: flex-start;
-    align-items: start; }
-    .itemEquipo .contentText .title h3 {
-      color: #00355F;
-      font-family: var(--fuente-vietnam);
-      font-size: 24px;
-      font-weight: 700; }
-    .itemEquipo .contentText .title a {
-      display: flex; }
-      .itemEquipo .contentText .title a img {
-        transition: 0.2s linear; }
-      .itemEquipo .contentText .title a:hover img {
-        transform: scale(1.1); }
-  .itemEquipo .contentText p, .itemEquipo .contentText span {
-    margin-top: 10px;
-    color: #00355F;
-    font-family: var(--fuente-roboto);
-    font-size: 16px;
-    font-weight: 300; }
-  .itemEquipo .contentText span {
-    display: block;
-    margin-top: 0;
-    margin-bottom: 10px; }
-
-.itemEquipo:hover .contentImg img {
-  transform: scale(1.08); }
-
-.itemEquipo:hover .contentText {
-  background: #00355F; }
-  .itemEquipo:hover .contentText .title h3 {
-    color: #fff; }
-  .itemEquipo:hover .contentText .title a svg path {
-    fill: #fff; }
-  .itemEquipo:hover .contentText p, .itemEquipo:hover .contentText span {
-    color: #fff; }
-
-section.bannerNosotros {
-  background-color: #E6F2FE;
-  padding: 100px 0; }
-  section.bannerNosotros .container {
-    display: flex;
-    grid-column-gap: 100px; }
-  section.bannerNosotros .contentImg {
-    width: 46.5%;
-    overflow: hidden; }
-    section.bannerNosotros .contentImg img {
-      width: 100%; }
-  section.bannerNosotros .contentText {
-    width: 53.5%; }
-    section.bannerNosotros .contentText h2 {
-      color: #00355F;
-      font-family: var(--fuente-vietnam);
-      font-size: 35px;
-      font-weight: 700;
-      margin-bottom: 30px; }
-    section.bannerNosotros .contentText .content {
-      margin-bottom: 35px; }
-      section.bannerNosotros .contentText .content p {
-        color: #00355F;
-        font-family: var(--fuente-roboto);
-        font-size: 16px;
-        font-weight: 300;
-        margin-bottom: 25px; }
-      section.bannerNosotros .contentText .content p:last-child {
-        margin-bottom: 0; }
-    section.bannerNosotros .contentText h3 {
-      color: #00355F;
-      font-family: var(--fuente-vietnam);
-      font-size: 20px;
-      font-weight: 700; }
-    section.bannerNosotros .contentText a {
-      margin-top: 15px;
-      color: #B36700;
-      font-family: var(--fuente-roboto);
-      font-size: 16px;
-      font-weight: 500;
-      display: flex;
-      grid-gap: 10px;
-      align-items: center;
-      text-decoration: underline; }
-      section.bannerNosotros .contentText a:hover img {
-        animation: moverFlecha 1s infinite; }
-
-@keyframes moverFlecha {
-  0% {
-    transform: translateX(0); }
-  50% {
-    transform: translateX(5px); }
-  100% {
-    transform: translateX(0); } }
-
-section.bannerNosotros:nth-child(2) {
-  background-color: #fff; }
-  section.bannerNosotros:nth-child(2) .container {
-    flex-direction: row-reverse; }
-
-section.politicasNormativas {
-  padding-bottom: 100px; }
-  section.politicasNormativas h2 {
-    color: #00355F;
-    font-size: 35px;
-    font-weight: 700; }
-  section.politicasNormativas .content {
-    margin-top: 40px;
-    display: flex;
-    grid-column-gap: 135px; }
-    section.politicasNormativas .content .part1 {
-      flex-shrink: 0;
-      width: 300px; }
-    section.politicasNormativas .content .part2 {
-      width: 100%; }
-      section.politicasNormativas .content .part2 .contentPDF .item {
-        padding: 30px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #00355F; }
-        section.politicasNormativas .content .part2 .contentPDF .item h3 {
-          color: #00355F;
-          font-family: var(--fuente-vietnam);
-          font-size: 24px;
-          font-weight: 700; }
-        section.politicasNormativas .content .part2 .contentPDF .item:first-child {
-          padding-top: 0; }
-        section.politicasNormativas .content .part2 .contentPDF .item div {
-          display: flex;
-          align-items: center;
-          grid-gap: 10px; }
-          section.politicasNormativas .content .part2 .contentPDF .item div span {
-            opacity: 0;
-            color: #B36700;
-            font-family: var(--fuente-roboto);
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 500;
-            transition: all 0.2s linear; }
-        section.politicasNormativas .content .part2 .contentPDF .item:hover div span {
-          opacity: 1; }
-      section.politicasNormativas .content .part2 .btn {
+      flex-direction: column;
+      grid-gap: 30px; }
+      section.infoEmpresa .container .part2 .part2-1,
+      section.infoEmpresa .container .part2 .part2-2 {
         display: flex; }
-        section.politicasNormativas .content .part2 .btn button {
-          margin-top: 50px;
-          width: 135px;
-          border: none;
-          display: none; }
-          section.politicasNormativas .content .part2 .btn button img {
-            transform: rotate(90deg); }
-
-.buscador {
-  display: flex;
-  align-items: stretch; }
-  .buscador button {
-    background-color: #E6F2FE;
-    padding: 15px 17px;
-    border: none;
-    cursor: pointer; }
-    .buscador button img {
-      width: 30px; }
-  .buscador input {
-    width: 100%;
-    padding-right: 17px;
-    background-color: #E6F2FE;
-    color: #00355F;
-    font-family: var(--fuente-vietnam);
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    border: none;
-    outline: none; }
-    .buscador input::placeholder {
-      color: #00355F; }
-
-.categoriasBuscador {
-  border: 1px solid #00355F;
-  color: #00355F;
-  font-family: var(--fuente-vietnam);
-  font-size: 20px;
-  font-weight: 500;
-  margin-top: 30px; }
-  .categoriasBuscador .item .cabecera {
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    position: relative; }
-    .categoriasBuscador .item .cabecera::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -1px;
-      transform: translateX(-50%);
-      height: 1px;
-      background-color: #00355F;
-      width: 88%; }
-    .categoriasBuscador .item .cabecera:last-child::before {
-      content: none; }
-    .categoriasBuscador .item .cabecera p {
-      font-weight: 700;
-      font-family: var(--fuente-vietnam);
-      font-size: 20px;
-      pointer-events: none; }
-    .categoriasBuscador .item .cabecera img {
-      pointer-events: none;
-      width: 15px; }
-  .categoriasBuscador .item .cuerpo {
-    margin: 0px 20px;
-    height: 0;
-    overflow: hidden;
-    transition: all 0.2s linear;
-    overflow-y: auto; }
-    .categoriasBuscador .item .cuerpo::-webkit-scrollbar {
-      width: 5px; }
-    .categoriasBuscador .item .cuerpo::-webkit-scrollbar-thumb {
-      background-color: var(--color-azul); }
-    .categoriasBuscador .item .cuerpo::-webkit-scrollbar-track {
-      background-color: #c4c4c4; }
-    .categoriasBuscador .item .cuerpo a {
-      display: block;
-      margin: 20px 0;
-      font-size: 20px; }
-      .categoriasBuscador .item .cuerpo a.select {
-        font-weight: 700; }
-      .categoriasBuscador .item .cuerpo a:first-child {
-        margin-top: 0; }
-      .categoriasBuscador .item .cuerpo a:last-child {
-        margin-bottom: 0; }
-  .categoriasBuscador .item.open .cuerpo {
-    margin: 15px 20px;
-    height: 160px; }
-  .categoriasBuscador .item.open img {
-    transform: rotate(180deg); }
-
-section.mainPortafolio {
-  margin: 100px 0; }
-  section.mainPortafolio .container {
-    display: flex;
-    grid-column-gap: 130px; }
-    section.mainPortafolio .container .part1 {
-      flex-shrink: 0;
-      width: 300px; }
-    section.mainPortafolio .container .part2 {
-      width: 100%; }
-      section.mainPortafolio .container .part2 .listProyectos {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 30px;
-        grid-row-gap: 30px; }
-        section.mainPortafolio .container .part2 .listProyectos .itemArticulo .dorado {
-          display: flex; }
-      section.mainPortafolio .container .part2 .btn .dorado {
-        margin-top: 50px;
-        width: 135px;
-        border: none;
-        display: none; }
-        section.mainPortafolio .container .part2 .btn .dorado img {
-          transform: rotate(90deg); }
+        section.infoEmpresa .container .part2 .part2-1 .contentImg,
+        section.infoEmpresa .container .part2 .part2-2 .contentImg {
+          width: 50%; }
+        section.infoEmpresa .container .part2 .part2-1 .text,
+        section.infoEmpresa .container .part2 .part2-2 .text {
+          width: 50%; }
 
 section.negociosHome .swiper .swiper-pagination,
 section.proyectosInterna .part2 .movil,
@@ -2324,138 +1746,8 @@ section.noticiasRelacionadas .swiper .swiper-pagination,
 section.MenuMovilSection,
 section.experiencia .fondo.movil,
 section.caracteristicas .swiper-pagination,
-section.mainThanks .fondo .filtro img.movil,
-section.tabs select {
+section.mainThanks .fondo .filtro img.movil {
   display: none; }
-
-section.tabsRH {
-  position: relative;
-  padding-bottom: 100px; }
-  section.tabsRH .itemTab .cabecera {
-    padding: 30px 0;
-    border-bottom: 1px solid #00355f;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    overflow: hidden;
-    grid-gap: 20px; }
-    section.tabsRH .itemTab .cabecera h2 {
-      color: #00355F;
-      font-family: var(--fuente-vietnam);
-      font-size: 35px;
-      font-weight: 700;
-      pointer-events: none; }
-    section.tabsRH .itemTab .cabecera img {
-      pointer-events: none;
-      transform: rotate(90deg); }
-  section.tabsRH .itemTab .content {
-    padding-top: 0;
-    display: flex;
-    height: 0;
-    overflow: hidden; }
-    section.tabsRH .itemTab .content .part1 {
-      width: 55%;
-      padding-right: 80px; }
-      section.tabsRH .itemTab .content .part1 p {
-        color: #00355F;
-        font-family: var(--fuente-roboto);
-        font-size: 16px;
-        font-weight: 300;
-        margin-bottom: 50px; }
-      section.tabsRH .itemTab .content .part1 ul {
-        margin-left: 16px; }
-        section.tabsRH .itemTab .content .part1 ul li {
-          color: #00355f;
-          font-family: var(--fuente-roboto);
-          font-size: 16px;
-          font-weight: 300;
-          display: block;
-          margin: 40px 0;
-          position: relative; }
-          section.tabsRH .itemTab .content .part1 ul li::before {
-            content: "";
-            position: absolute;
-            top: 4px;
-            left: -16px;
-            width: 9px;
-            height: 9px;
-            border-radius: 0 10px 10px 0;
-            background-color: #007af3; }
-        section.tabsRH .itemTab .content .part1 ul li:first-child {
-          margin-top: 0; }
-        section.tabsRH .itemTab .content .part1 ul li:last-child {
-          margin-bottom: 0; }
-      section.tabsRH .itemTab .content .part1 button {
-        background-color: #b36700;
-        padding: 15px 20px;
-        border: none;
-        color: #fff;
-        font-family: var(--fuente-roboto);
-        font-size: 16px;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        margin-top: 30px;
-        display: none; }
-        section.tabsRH .itemTab .content .part1 button img {
-          margin-left: 10px;
-          transform: rotate(90deg); }
-    section.tabsRH .itemTab .content .part2 {
-      width: 45%;
-      position: relative;
-      overflow: hidden; }
-      section.tabsRH .itemTab .content .part2 img {
-        width: 100%; }
-      section.tabsRH .itemTab .content .part2 .movil {
-        display: none; }
-  section.tabsRH .itemTab.open .cabecera img {
-    transform: rotate(-90deg); }
-  section.tabsRH .itemTab.open .content {
-    height: auto;
-    padding-top: 50px; }
-
-section.contentPDF {
-  padding-top: 150px;
-  padding-bottom: 100px; }
-  section.contentPDF .item {
-    padding: 30px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #00355F;
-    grid-gap: 20px; }
-    section.contentPDF .item h3 {
-      color: #00355F;
-      font-family: var(--fuente-vietnam);
-      font-size: 24px;
-      font-weight: 700; }
-    section.contentPDF .item div {
-      display: flex;
-      align-items: center;
-      grid-gap: 10px; }
-      section.contentPDF .item div span {
-        opacity: 0;
-        color: #B36700;
-        font-family: var(--fuente-roboto);
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        transition: all 0.2s linear; }
-    section.contentPDF .item:hover div span {
-      opacity: 1; }
-  section.contentPDF .item:first-child {
-    padding-top: 0; }
-  section.contentPDF .btn {
-    display: flex;
-    justify-content: center; }
-    section.contentPDF .btn button {
-      margin-top: 50px;
-      width: 135px;
-      border: none;
-      display: none; }
-      section.contentPDF .btn button img {
-        transform: rotate(90deg); }
 
 @media (max-width: 1800px) {
   section.proyectosInterna .part1,
@@ -2543,6 +1835,8 @@ section.contentPDF {
     font-size: 48px; }
   section.bannerNegocios .container .content {
     max-width: 709px; }
+  section.experiencia .contadores h3 {
+    font-size: 70px; }
   section.blogTitle h1,
   section.aviso h1 {
     font-size: 48px; }
@@ -2560,26 +1854,14 @@ section.contentPDF {
     width: 100px; }
   section.loading .content div:last-child img {
     width: 155px; }
-  section.infoEmpresa .container .text h3,
-  section.infoEmpresa .container .part4 .title h3 {
-    font-size: 24px; }
-  section.Equipo .listEquipo {
-    grid-template-columns: repeat(3, 1fr); }
-  section.bannerNosotros .container {
-    grid-column-gap: 70px; }
-  section.politicasNormativas .content {
-    grid-column-gap: 100px; }
-  section.mainPortafolio .container {
-    grid-column-gap: 115px; }
-  body.page-sostenibilidad section.tabs .enlaces a {
-    margin: 0 25px; }
-  body.page-sostenibilidad section.tabs .enlaces a:first-child {
-    margin-left: 0; }
-  body.page-sostenibilidad section.tabs .enlaces a:last-child {
-    margin-right: 0; }
   /* end 1440 */ }
 
 @media (max-width: 1280px) {
+  /*
+  section.experiencia .contadores h3 {
+    font-size: 65px;
+  }
+  */
   section.experiencia .contadores:before {
     left: 30.5%; }
   section.bajada .container .contentText .content {
@@ -2615,20 +1897,10 @@ section.contentPDF {
   section.mainContacto .container .part2 h2,
   section.oficinas .part2 h2,
   section.mainThanks .container p,
-  section.aviso h2,
-  section.Equipo h2,
-  section.bannerNosotros .contentText h2,
-  section.politicasNormativas h2,
-  section.accionSocial .container h2,
-  section.bannerSocial .part1 h2,
-  section.tabsRH .itemTab .cabecera h2 {
+  section.aviso h2 {
     font-size: 30px; }
-  section.politicasNormativas .content {
-    grid-column-gap: 55px; }
   body.page-home section.bajada .container .contentText p,
-  .itemArticulo .contentText p,
-  .itemEquipo .contentText .title h3,
-  .itemArticulo .contentText h3 {
+  .itemArticulo .contentText p {
     font-size: 20px; }
   section.bajada .container .contentText p {
     line-height: 150%; }
@@ -2684,34 +1956,11 @@ section.contentPDF {
     width: 94%; }
   section.mainContacto .container .part2 .contentImg {
     margin-bottom: 10px; }
-  section.infoEmpresa .container .part1 .contentImg {
-    height: 350px; }
-  section.infoEmpresa .container .part4 {
-    padding: 50px 25px; }
-  section.infoEmpresa .container .part4 {
-    grid-gap: 80px; }
-  section.infoEmpresa .container .part4 .imgs {
-    justify-content: space-around; }
-  section.Equipo .listEquipo {
-    grid-column-gap: 25px;
-    grid-row-gap: 25px; }
-  .itemEquipo .contentText .title a img,
-  .itemEquipo .contentText .title a svg {
-    width: 24px; }
-  section.bannerNosotros .container {
-    grid-column-gap: 30px; }
-  section.mainPortafolio .container {
-    grid-column-gap: 60px; }
-  section.mainPortafolio .container .part2 .listProyectos {
-    grid-column-gap: 25px;
-    grid-row-gap: 25px; }
-  section.bannerSocial .part1 {
-    padding-right: 66px; }
   /* end 1280 */ }
 
 @media (max-width: 1200px) {
-  section.contentPDF .item div span {
-    display: none !important; }
+  section.experiencia .contadores h3 {
+    font-size: 60px; }
   section.experiencia .contadores p {
     font-size: 20px; }
   header .navigation .navi .listaMenu {
@@ -2860,10 +2109,6 @@ section.contentPDF {
     display: block; }
   /* end 1200 */ }
 
-@media (max-width: 1090px) {
-  body.page-sostenibilidad section.tabs .enlaces a {
-    margin: 0 16px; } }
-
 @media (max-width: 1024px) {
   section.caracteristicas .swiper-pagination {
     display: block; }
@@ -2899,11 +2144,9 @@ section.contentPDF {
   section.proyectosInterna .part1 {
     width: 51%;
     padding-top: 80px;
-    padding-right: 70px;
-    padding-bottom: 80px; }
+    padding-right: 70px; }
   section.experiencia,
   section.bannerNegociosInterna,
-  section.bannerNegociosInterna2,
   section.caracteristicas,
   section.blogTitle,
   section.bajada,
@@ -2911,30 +2154,15 @@ section.contentPDF {
   section.mainContacto,
   section.oficinas .part2,
   body.page-contacto section.noticiasRelacionadas,
-  section.aviso,
-  section.Equipo,
-  section.bannerNosotros,
-  body.page-internaPortafolio section.noticiasRelacionadas,
-  section.accionSocial,
-  section.contentPDF {
+  section.aviso {
     padding: 80px 0; }
-  section.bannerSocial .part1 {
-    padding: 80px 0;
-    padding-right: 50px; }
   section.aviso h1 {
     margin-bottom: 80px; }
   section.bannerNegociosInterna h2,
-  section.bannerNegociosInterna2 h2,
   section.experiencia h2 {
     font-size: 30px; }
   section.caracteristicas .content .itemEstructura .contentText .text h3,
-  section.aviso h3,
-  section.infoEmpresa .container .text h3,
-  section.infoEmpresa .container .part4 .title h3,
-  section.tabs .enlaces a,
-  .itemPilares .text h3,
-  section.politicasNormativas .content .part2 .contentPDF .item h3,
-  section.contentPDF .item h3 {
+  section.aviso h3 {
     font-size: 20px; }
   section.caracteristicas .sliderContent {
     width: 100%;
@@ -2947,9 +2175,7 @@ section.contentPDF {
     left: 31%; }
   section.experiencia .contadores::after {
     right: 31.5%; }
-  section.listaBlog .container,
-  section.infoEmpresa,
-  section.politicasNormativas {
+  section.listaBlog .container {
     padding-bottom: 80px; }
   section.listaBlog .articulos {
     grid-template-columns: repeat(2, 1fr);
@@ -3036,50 +2262,6 @@ section.contentPDF {
     margin-top: 10px; }
   section.caracteristicas .swiper-pagination {
     display: block; }
-  section.infoEmpresa .container .part1 .contentImg {
-    height: 317px; }
-  section.infoEmpresa .container .part4 .imgs {
-    justify-content: space-between;
-    padding-right: 25px;
-    padding-left: 54px; }
-  body.NuestraCultura section.noticiasRelacionadas {
-    padding-top: 80px; }
-  body.NuestraCultura section.proyectosInterna .part1 ul li {
-    font-size: 20px; }
-  body.NuestraCultura section.proyectosInterna .part1 ul li ul li {
-    font-size: 18px; }
-  body.NuestraCultura section.proyectosInterna .part1 ul li::before {
-    top: 8px; }
-  .itemPilares .text .flecha {
-    padding: 18px; }
-  section.Equipo .listEquipo {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 700px;
-    margin: 0 auto;
-    margin-top: 35px; }
-  section.politicasNormativas .content {
-    grid-column-gap: 25px; }
-  section.mainPortafolio {
-    margin: 80px 0; }
-  section.mainPortafolio .container {
-    grid-column-gap: 30px; }
-  section.mainPortafolio .container .part1 {
-    width: 235px; }
-  body.page-sostenibilidad section.tabs .enlaces a {
-    margin: 0 16px; }
-  section.accionSocial .container .content {
-    grid-gap: 45px; }
-  section.bannerSocial .part2 {
-    width: 46%; }
-  section.bannerSocial .part1 {
-    width: 54%; }
-  section.noticiasRelacionadas .contentSlider .part1 .flechas .swiper-button-next,
-  section.noticiasRelacionadas .contentSlider .part1 .flechas .swiper-button-prev {
-    background-position-x: 13px; }
-  section.tabsRH .itemTab .content .part1 p {
-    margin-bottom: 30px; }
-  section.tabsRH .itemTab .content .part1 ul li {
-    margin: 30px 0; }
   /* 1024 end */ }
 
 @media (max-width: 950px) {
@@ -3122,46 +2304,7 @@ section.contentPDF {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center; }
-  section.experiencia .contadores p {
-    text-align: end; }
-  section.experiencia .contadores .contador div {
-    grid-column-gap: 30px; }
-  body.page-sostenibilidad section.tabs .container {
-    width: 100%; }
-    body.page-sostenibilidad section.tabs .container .lista {
-      position: relative;
-      display: block;
-      width: 100%; }
-      body.page-sostenibilidad section.tabs .container .lista::before {
-        content: "";
-        position: absolute;
-        width: 24px;
-        height: 14px;
-        background-image: url(../img/flecha-select.svg);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        right: 41px;
-        top: 50%;
-        transform: translateY(-50%); }
-      body.page-sostenibilidad section.tabs .container .lista select {
-        display: block;
-        color: #00355f;
-        width: 100%;
-        font-family: var(--fuente-roboto);
-        font-size: 20px;
-        font-weight: 700;
-        background-color: #e6f2fe;
-        border: none;
-        padding: 20px 41px;
-        border-bottom: 4px solid #007af3;
-        outline: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none; }
-    body.page-sostenibilidad section.tabs .container .enlaces {
-      display: none; }
-  /*end 950*/ }
+        align-items: center; } }
 
 @media (max-width: 920px) {
   section.proyectosInterna {
@@ -3187,22 +2330,7 @@ section.contentPDF {
     padding-bottom: 80px; }
   section.caracteristicas {
     padding: 0;
-    padding-bottom: 80px; }
-  body.page-sostenibilidad section.proyectosInterna {
-    padding-top: 0px; }
-  section.tabsRH .itemTab.open .content {
-    flex-direction: column; }
-  section.tabsRH .itemTab .content .part1 {
-    width: 100%;
-    padding-right: 0; }
-  section.tabsRH .itemTab .content .part2 {
-    padding-top: 35px;
-    width: 100%; }
-    section.tabsRH .itemTab .content .part2 img {
-      display: none; }
-    section.tabsRH .itemTab .content .part2 .movil {
-      display: block; }
-  /*end 920*/ }
+    padding-bottom: 80px; } }
 
 @media (max-width: 890px) {
   section.listaBlog .categorias {
@@ -3242,35 +2370,9 @@ section.contentPDF {
           -moz-appearance: none;
           appearance: none; }
           section.listaBlog .categorias .container .lista select option {
-            padding: 50px 0 !important; }
-  section.infoEmpresa .container .part2 .contentImg,
-  section.infoEmpresa .container .part3 .contentImg {
-    display: none; }
-  section.infoEmpresa .container .part2 .text,
-  section.infoEmpresa .container .part3 .text {
-    width: 100%; }
-  section.infoEmpresa .container {
-    grid-template-columns: repeat(2, 1fr); }
-  section.infoEmpresa .container .part4 .imgs {
-    padding-right: 0;
-    padding-left: 20px; }
-  section.infoEmpresa .container .part1 .contentImg {
-    height: 240px; }
-  section.accionSocial .container .content {
-    flex-direction: column;
-    grid-gap: 50px; }
-  section.accionSocial .container .content .contentText,
-  section.accionSocial .container .content .contentImg {
-    width: 100%; }
-  section.accionSocial .container .content .contentImg {
-    display: flex; }
-  section.accionSocial .container .content .contentImg img {
-    max-width: 440px;
-    margin: 0 auto; } }
+            padding: 50px 0 !important; } }
 
 @media (max-width: 850px) {
-  body.page-nosotros section.tabs .enlaces a {
-    margin: 0 25px; }
   section.oficinas .part1 {
     display: none; }
   section.oficinas .part2 {
@@ -3345,16 +2447,7 @@ section.contentPDF {
     footer .desplegable.open .lista {
       height: auto; }
     footer .desplegable.open .title::after {
-      transform: rotate(180deg); }
-  section.mainPortafolio .container {
-    flex-direction: column; }
-  section.mainPortafolio .container .part1 {
-    width: 100%; }
-  .categoriasBuscador .item .cabecera::before {
-    width: 94.5%; }
-  section.mainPortafolio .container .part2 {
-    padding-top: 80px; }
-  /*end 850*/ }
+      transform: rotate(180deg); } }
 
 @media (max-width: 768px) {
   section.aviso h1 {
@@ -3375,8 +2468,7 @@ section.contentPDF {
     font-size: 18px; }
   section.home .container .content {
     max-width: 100%; }
-  section.bannerNegociosInterna h2,
-  section.bannerNegociosInterna2 .container div:first-child {
+  section.bannerNegociosInterna h2 {
     width: 55%; }
   section.listaBlog .articulos {
     grid-gap: 25px; }
@@ -3412,32 +2504,6 @@ section.contentPDF {
     width: 90px; }
   section.loading .content div:last-child img {
     width: 140px; }
-  section.infoEmpresa .container .part4 {
-    grid-gap: 50px; }
-  section.infoEmpresa .container {
-    grid-column-gap: 20px;
-    grid-row-gap: 20px; }
-  section.infoEmpresa .container .part4 .imgs {
-    padding: 0; }
-  section.tabs .enlaces a {
-    margin: 0 30px; }
-  section.bannerNosotros .container,
-  section.bannerNosotros:nth-child(2) .container {
-    flex-direction: column-reverse; }
-  section.bannerNosotros .contentText,
-  section.bannerNosotros .contentImg {
-    width: 100%; }
-  section.bannerNosotros .contentImg {
-    max-width: 450px;
-    margin: 0 auto;
-    margin-top: 30px; }
-  section.politicasNormativas .content {
-    flex-direction: column;
-    grid-gap: 50px; }
-  section.politicasNormativas .content .part1 {
-    width: 100%; }
-  section.bannerSocial .part2 img {
-    left: -29px; }
   /*768 end*/ }
 
 @media (max-width: 750px) {
@@ -3446,56 +2512,14 @@ section.contentPDF {
     footer .part2 ul {
       display: none; }
   footer .desplegable ul {
-    display: block; }
-  body.page-sostenibilidad section.tabs .container .lista select {
-    padding: 20px 34px; }
-  body.page-sostenibilidad section.tabs .container .lista::before {
-    right: 34px; }
-  section.tabs .container {
-    width: 100%; }
-  section.tabs .container .lista {
-    position: relative;
-    display: block;
-    width: 100%; }
-  section.tabs .container .lista::before {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 14px;
-    background-image: url(../img/flecha-select.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    right: 22px;
-    top: 50%;
-    transform: translateY(-50%); }
-  section.tabs .container .enlaces {
-    display: none; }
-  section.tabs .container .lista select {
-    display: block;
-    color: #00355f;
-    width: 100%;
-    font-family: var(--fuente-roboto);
-    font-size: 20px;
-    font-weight: 700;
-    background-color: #e6f2fe;
-    border: none;
-    padding: 20px 34px;
-    border-bottom: 4px solid #007af3;
-    outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; } }
+    display: block; } }
 
 @media (max-width: 650px) {
-  section.tabs .container .lista select {
-    padding: 20px 28px; }
-  section.bannerNegociosInterna .container,
-  section.bannerNegociosInterna2 .container {
+  section.bannerNegociosInterna .container {
     flex-direction: column;
     align-items: start;
     grid-gap: 40px; }
-  section.bannerNegociosInterna h2,
-  section.bannerNegociosInterna2 .container div:first-child {
+  section.bannerNegociosInterna h2 {
     width: 100%; }
   section.listaBlog .articulos {
     grid-template-columns: repeat(1, 1fr);
@@ -3512,59 +2536,14 @@ section.contentPDF {
     flex-wrap: wrap;
     align-items: center;
     grid-column-gap: 10px; }
-  section.bannerNegociosInterna .container,
-  section.bannerNegociosInterna2 .container {
-    grid-gap: 20px; }
-  section.infoEmpresa .container {
-    display: flex;
-    flex-direction: column;
-    grid-column-gap: 25px;
-    grid-row-gap: 25px; }
-  section.infoEmpresa .container .part1 .contentImg {
-    height: 311px; }
-  section.infoEmpresa .container .part4,
-  section.infoEmpresa .container .part4 .imgs {
-    flex-direction: column;
-    align-items: start;
-    align-items: flex-start; }
-  section.infoEmpresa .container .part4 {
-    grid-gap: 20px;
-    padding: 20px 25px; }
-  section.infoEmpresa .container .part4 .imgs {
-    grid-gap: 30px; }
-  section.infoEmpresa .container .part4 .imgs div {
-    flex-direction: row;
-    grid-gap: 20px; }
-  section.infoEmpresa .container .part4 .imgs div img {
-    width: 45px; }
-  section.infoEmpresa .container .part4 .imgs div p {
-    font-size: 18px; } }
+  section.bannerNegociosInterna .container {
+    grid-gap: 20px; } }
 
 @media (max-width: 600px) {
   section.bajada .container .contentText .content {
     max-width: 100%; }
   section.bajada .container {
-    padding-left: 25px; }
-  section.Equipo .listEquipo,
-  section.mainPortafolio .container .part2 .listProyectos {
-    grid-template-columns: repeat(1, 1fr);
-    max-width: 325px; }
-  section.mainPortafolio .container .part2 .listProyectos {
-    margin: 0 auto; }
-  section.bannerSocial .container {
-    flex-direction: column-reverse; }
-  section.bannerSocial .part1,
-  section.bannerSocial .part2 {
-    width: 100%; }
-  section.bannerSocial .part2 img {
-    position: relative;
-    left: 0;
-    transform: translateX(20%); }
-  section.bannerSocial .part1 {
-    padding: 40px 0 80px 0; }
-  section.bannerSocial .part2 {
-    justify-content: center; }
-  /*end 600*/ }
+    padding-left: 25px; } }
 
 @media (max-width: 500px) {
   section.aviso h1 {
@@ -3610,7 +2589,6 @@ section.contentPDF {
   section.bajada .container .title h2,
   section.proyectosInterna .part1 h2,
   section.bannerNegociosInterna h2,
-  section.bannerNegociosInterna2 h2,
   section.caracteristicas h2,
   section.experiencia h2,
   section.articuloTitle p,
@@ -3622,19 +2600,8 @@ section.contentPDF {
   section.MenuMovilSection ul li ul li,
   section.MenuMovilSection ul li ul a,
   section.proyectosInterna .part1 h2,
-  section.aviso h2,
-  section.Equipo h2,
-  section.bannerNosotros .contentText h2,
-  section.politicasNormativas h2,
-  section.accionSocial .container h2,
-  section.bannerSocial .part1 h2,
-  section.tabsRH .itemTab .cabecera h2 {
+  section.aviso h2 {
     font-size: 24px; }
-  section.accionSocial .container .content {
-    margin-top: 20px;
-    grid-gap: 35px; }
-  section.bannerNosotros .contentText h2 {
-    margin-bottom: 25px; }
   section.proyectosInterna .part1 h2 {
     margin-bottom: 30px; }
   section.proyectosInterna .part1 ul li {
@@ -3694,13 +2661,8 @@ section.contentPDF {
   section.oficinas .part2 .itemTab .cabecera h3,
   .itemEstructura .contentText .text h3 {
     font-size: 20px; }
-  section.oficinas .part2 .itemTab .direccion span,
-  .buscador input,
-  .categoriasBuscador .item .cuerpo a,
-  .categoriasBuscador .item .cabecera p {
+  section.oficinas .part2 .itemTab .direccion span {
     font-size: 18px; }
-  .categoriasBuscador .item.open .cuerpo {
-    height: 155px; }
   section.oficinas .part2 .itemTab .mapa iframe {
     height: 300px !important; }
   section.oficinas .part2 .itemTab .mapa {
@@ -3742,55 +2704,9 @@ section.contentPDF {
   section.aviso p {
     margin-bottom: 15px;
     padding-left: 20px; }
-  section.tabs .container {
-    width: 100%; }
-    section.tabs .container .lista {
-      position: relative;
-      display: block;
-      width: 100%; }
-      section.tabs .container .lista::before {
-        content: "";
-        position: absolute;
-        width: 24px;
-        height: 14px;
-        background-image: url(../img/flecha-select.svg);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        right: 22px;
-        top: 50%;
-        transform: translateY(-50%); }
-      section.tabs .container .lista select {
-        display: block;
-        color: #00355f;
-        width: 100%;
-        font-family: var(--fuente-roboto);
-        font-size: 20px;
-        font-weight: 700;
-        background-color: #e6f2fe;
-        border: none;
-        padding: 20px 22px;
-        border-bottom: 4px solid #007af3;
-        outline: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none; }
-    section.tabs .container .enlaces {
-      display: none; }
-  section.experiencia .contadores p {
-    text-align: start; }
-  section.tabsRH .itemTab.open .content {
-    padding-top: 30px; }
-  body.page-sostenibilidad section.tabs .container .lista select {
-    padding: 20px 22px; }
-  body.page-sostenibilidad section.tabs .container .lista::before {
-    right: 22px; }
   /* 500 end */ }
 
 @media (max-width: 425px) {
-  body.page-sostenibilidad section.tabs .container .lista select {
-    padding: 20px 18px; }
-  body.page-sostenibilidad section.tabs .container .lista::before {
-    right: 18px; }
   section.home .container .content h1 {
     font-size: 40px; }
   section.home .container .content a {
@@ -3811,7 +2727,6 @@ section.contentPDF {
   section.bajada .container .title h2,
   section.proyectosInterna .part1 h2,
   section.bannerNegociosInterna h2,
-  section.bannerNegociosInterna2 h2,
   section.caracteristicas h2,
   section.experiencia h2,
   section.articuloTitle p,
@@ -3823,13 +2738,7 @@ section.contentPDF {
   section.MenuMovilSection ul li ul li,
   section.MenuMovilSection ul a ul a,
   section.proyectosInterna .part1 h2,
-  section.aviso h2,
-  section.Equipo h2,
-  section.bannerNosotros .contentText h2,
-  section.politicasNormativas h2,
-  section.accionSocial .container h2,
-  section.bannerSocial .part1 h2,
-  section.tabsRH .itemTab .cabecera h2 {
+  section.aviso h2 {
     font-size: 22px; }
   section.MenuMovilSection ul li svg {
     top: 13px; }
@@ -3850,20 +2759,8 @@ section.contentPDF {
   section.bajada .container .contentText p,
   section.proyectosInterna .part1 ul li,
   section.contentInfoArticulo .part2 .publicidad a,
-  section.aviso p,
-  section.infoEmpresa .container .text p,
-  .itemPilares .text p,
-  .itemEquipo .contentText p,
-  .itemEquipo .contentText span,
-  section.bannerNosotros .contentText .content p,
-  section.bannerNosotros .contentText a,
-  section.accionSocial .container .content .contentText p,
-  section.bannerSocial .part1 p,
-  section.tabsRH .itemTab .content .part1 p,
-  section.tabsRH .itemTab .content .part1 ul li {
+  section.aviso p {
     font-size: 14px; }
-  section.bannerSocial .part1 p {
-    margin-top: 10px; }
   section.bannerNegocios .container p {
     font-size: 24px; }
   section.proyectosInterna .part1 ul li {
@@ -3880,20 +2777,8 @@ section.contentPDF {
   section.caracteristicas .content .itemEstructura .contentText .text h3,
   section.contentInfoArticulo .part2 .publicidad p,
   section.aviso h3,
-  .itemEstructura .contentText .text h3,
-  section.infoEmpresa .container .text h3,
-  section.infoEmpresa .container .part4 .title h3,
-  body.NuestraCultura section.proyectosInterna .part1 ul li,
-  .itemPilares .text h3,
-  section.tabs .container .lista select,
-  .itemEquipo .contentText .title h3,
-  section.bannerNosotros .contentText h3,
-  section.politicasNormativas .content .part2 .contentPDF .item h3,
-  .itemArticulo .contentText h3 {
+  .itemEstructura .contentText .text h3 {
     font-size: 18px; }
-  section.tabs .container .lista::before {
-    width: 19px;
-    height: 14px; }
   section.listaBlog .articulos {
     padding-top: 50px; }
   section.listaBlog .categorias .container .lista select {
@@ -3913,31 +2798,4 @@ section.contentPDF {
   section.loading .content div:last-child img {
     width: 100px; }
   section.mainContacto .container .part1 .formulario {
-    margin-top: 20px; }
-  section.infoEmpresa .container .part1 .contentImg {
-    height: 290px; }
-  section.infoEmpresa .container .part4 .imgs div p,
-  body.NuestraCultura section.proyectosInterna .part1 ul li ul li {
-    font-size: 16px; }
-  body.NuestraCultura section.proyectosInterna .part1 ul li::before {
-    top: 6px; }
-  body.NuestraCultura section.proyectosInterna .part1 ul li {
-    padding-bottom: 20px;
-    margin: 20px 0; }
-  .itemPilares .text .flecha {
-    padding: 17px; }
-  section.politicasNormativas .content .part2 .contentPDF .item {
-    padding: 25px 0; }
-  section.politicasNormativas .content {
-    margin-top: 25px; }
-  .categoriasBuscador {
-    margin-top: 20px; }
-  section.bannerSocial .part2 img {
-    height: 270px; }
-  section.tabsRH .itemTab .cabecera {
-    padding: 25px 0; }
-  body.page-sostenibilidad section.tabs .container .lista select {
-    padding: 20px 16px; }
-  body.page-sostenibilidad section.tabs .container .lista::before {
-    right: 16px; }
-  /* end 380px */ }
+    margin-top: 20px; } }

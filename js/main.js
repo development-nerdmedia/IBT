@@ -1,3 +1,10 @@
+/*
+$("section.tabs").stick_in_parent({
+  offset_top: 0,
+  offset_right: 52,
+});
+*/
+
 MyApp = {
   loadingPrincipal: {
     init: function () {
@@ -8,6 +15,7 @@ MyApp = {
           document.querySelector(".loading").classList.add("ocultar");
           setTimeout(() => {
             document.querySelector("body").classList.remove("scrollHidden");
+            AOS.init();
           }, 1500);
         }, 1500);
       }, 500);
@@ -19,8 +27,6 @@ MyApp = {
         offset_top: 0,
         offset_right: 52,
       });
-
-      /* gsap para la animacion */
 
       var content = document.querySelector("section.home");
       var imgElement = document.querySelector(".animacion");
@@ -90,6 +96,13 @@ MyApp = {
             spaceBetween: 25,
           },
         },
+      });
+      $('.swiperNegocios').on('mouseenter', function () {
+        swiper.autoplay.stop();
+      });
+
+      $('.swiperNegocios').on('mouseleave', function () {
+        swiper.autoplay.start();
       });
     }
   },
@@ -284,6 +297,13 @@ MyApp = {
           },
         },
       });
+      $('.sliderNoticias').on('mouseenter', function () {
+        swiper.autoplay.stop();
+      });
+
+      $('.sliderNoticias').on('mouseleave', function () {
+        swiper.autoplay.start();
+      });
     }
   },
   tabsOficina: {
@@ -397,18 +417,45 @@ MyApp = {
       });
     }
   },
+  listaMovil2: {
+    init: function () {
+
+      const grupos = document.querySelectorAll('.part1');
+
+      grupos.forEach(grupo => {
+        const lista = grupo.querySelector('section.tabsRH .part1 ul');
+        const botonMostrarMas = grupo.querySelector('section.tabsRH .part1 button');
+        const elementosLi = lista.getElementsByTagName('li');
+
+        if (elementosLi.length > 5) {
+          botonMostrarMas.style.display = 'flex';
+        }
+
+        for (let i = 0; i < elementosLi.length; i++) {
+          if (i >= 5) {
+            elementosLi[i].style.display = 'none';
+          }
+        }
+
+        botonMostrarMas.addEventListener('click', function () {
+          for (let i = 5; i < elementosLi.length; i++) {
+            elementosLi[i].style.display = 'block';
+          }
+          botonMostrarMas.style.display = 'none';
+        });
+      });
+    }
+  },
   sliderCaracteristicas: {
     init: function () {
       var swiper2 = new Swiper(".swiperCaracteristicas", {
         slidesPerView: 3,
         spaceBetween: 25,
-        /*
         loop: true,
         autoplay: {
           delay: 2000,
           disableOnInteraction: true,
         },
-        */
         pagination: {
           el: ".swiperCaracteristicas .swiper-pagination",
           dynamicBullets: true,
@@ -422,7 +469,7 @@ MyApp = {
             },
           },
           951: {
-            slidesPerView: 2.8,  
+            slidesPerView: 2.8,
           },
           591: {
             slidesPerView: 2.07,
@@ -442,20 +489,22 @@ MyApp = {
   },
   menumovil: {
     init: function () {
-      const btnMenu = document.querySelector(".menuMovil")
-      const btnSubMenu = document.querySelector(".MenuMovilSection ul li.submenu")
-
+      const btnMenu = document.querySelector(".menuMovil");
       btnMenu.addEventListener('click', (e) => {
-        document.querySelector(".MenuMovilSection").classList.toggle("open");
-        /*
-        setTimeout(() => {
-          document.querySelector(".MenuMovilSection .content").classList.toggle("open");
-        }, 100);
-        */
+        const menuSection = document.querySelector(".MenuMovilSection");
+        const body = document.querySelector("body");
+        menuSection.classList.toggle("open");
         btnMenu.classList.toggle("select");
-        document.querySelector("body").classList.toggle("scrollHidden");
-      })
+        body.classList.toggle("scrollHidden");
+        if (!menuSection.classList.contains("open")) {
+          menuSection.classList.add("close");
+          setTimeout(() => {
+            menuSection.classList.remove("close");
+          }, 350);
+        }
+      });
 
+      const btnSubMenu = document.querySelector(".MenuMovilSection ul li.submenu")
       btnSubMenu.addEventListener('click', (e) => {
         btnSubMenu.classList.toggle("open");
       })
@@ -578,19 +627,113 @@ MyApp = {
       })
     }
   },
-  scroll:{
+  scroll: {
     init: function () {
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function () {
         const scrollButton = document.querySelector("section.bannerNegocios button");
-        const segundaSection = document.querySelector(".bajada"); 
-
-        scrollButton.addEventListener("click", function() {
+        const segundaSection = document.querySelector(".bajada");
+        scrollButton.addEventListener("click", function () {
           const offset = segundaSection.offsetTop - 100; // Restamos 50 píxeles
-          window.scrollTo({ 
-            top: offset, 
+          window.scrollTo({
+            top: offset,
             behavior: "smooth"
           });
-        });   
+        });
+      });
+    }
+  },
+  equipoVerMas: {
+    init: function () {
+      if ($(`.itemEquipo`).length >= 8) {
+        $("#cargarMasModulo").attr("style", "display:flex;");
+      }
+      $(`.itemEquipo.modulo-mas`).hide();
+      $(`.itemEquipo.modulo-mas`).slice(0, 8).show(0);
+      $("#cargarMasModulo").click(function (e) {
+        e.preventDefault();
+        $(`.modulo-mas:hidden`).slice(0, 4).slideDown(0);
+        if ($(`.modulo-mas:hidden`).length == 0) {
+          $("#cargarMasModulo").attr("style", "display:none;");
+        }
+      })
+    }
+  },
+  listaPortafolio: {
+    init: function () {
+      if ($(`.itemArticulo`).length >= 6) {
+        $("#cargarMasModulo").attr("style", "display:flex;");
+      }
+      $(`.itemArticulo.modulo-mas`).hide();
+      $(`.itemArticulo.modulo-mas`).slice(0, 6).show(0);
+      $("#cargarMasModulo").click(function (e) {
+        e.preventDefault();
+        $(`.modulo-mas:hidden`).slice(0, 2).slideDown(0);
+        if ($(`.modulo-mas:hidden`).length == 0) {
+          $("#cargarMasModulo").attr("style", "display:none;");
+        }
+      })
+    }
+  },
+  categoriaBuscador: {
+    init: function () {
+      const cabeceras = document.querySelectorAll(".categoriasBuscador .cabecera");
+
+      cabeceras.forEach(cabecera => {
+        cabecera.addEventListener("click", () => {
+          const item = cabecera.parentNode;
+          if (item.classList.contains("open")) {
+            item.classList.remove("open");
+          } else {
+            cabeceras.forEach(c => {
+              const otroItem = c.parentNode;
+              if (otroItem !== item) {
+                otroItem.classList.remove("open");
+              }
+            });
+            item.classList.add("open");
+          }
+        });
+      });
+    }
+  },
+  tabSostenibididad: {
+    init: function () {
+      document.querySelector(".cabecera").closest(".itemTab").classList.add("open");
+
+      const cabeceras = document.querySelectorAll('.cabecera');
+      cabeceras.forEach(cabecera => {
+        cabecera.addEventListener('click', () => {
+          const itemTabs = document.querySelectorAll('.itemTab');
+          itemTabs.forEach(itemTab => {
+            itemTab.classList.remove('open');
+          });
+          cabecera.parentElement.classList.add('open');
+        })
+      });
+    }
+  },
+  mostrarBoton: {
+    init: function () {
+      if ($(`.contentPDF .item`).length >= 6) {
+        $("#cargarMasModulo").attr("style", "display:flex;");
+      }
+      $(`.item.modulo-mas`).hide();
+      $(`.item.modulo-mas`).slice(0, 5).show(0);
+      $("#cargarMasModulo").click(function (e) {
+        e.preventDefault();
+        $(`.modulo-mas:hidden`).slice(0, 5).slideDown(0);
+        if ($(`.modulo-mas:hidden`).length == 0) {
+          $("#cargarMasModulo").attr("style", "display:none;");
+        }
+      })
+    }
+  },
+  cambioPageSelect:{
+    init: function () {
+      var select = document.querySelector("#seleccionarPagina");  
+      select.addEventListener("change", function() {
+          var selectedOption = select.options[select.selectedIndex].value;
+          window.location.href = selectedOption;
       });
     }
   }
@@ -598,6 +741,14 @@ MyApp = {
 
 if ($('section.bannerNegocios button').length > 0) {
   MyApp.scroll.init();
+}
+
+if ($('.contentPDF .item').length > 0) {
+  MyApp.mostrarBoton.init();
+}
+
+if ($('section.tabsRH .itemTab').length > 0) {
+  MyApp.tabSostenibididad.init();
 }
 
 if ($('.MenuMovilSection').length > 0) {
@@ -610,6 +761,8 @@ if ($('body.page-home').length > 0) {
 
 if ($('.loading').length > 0) {
   MyApp.loadingPrincipal.init();
+} else {
+  AOS.init();
 }
 
 if ($('section.home .fondo').length > 0) {
@@ -654,6 +807,16 @@ if ($('section.proyectosInterna .part1 ul').length > 0) {
   handleMediaQueryChange(mediaQuery);
 }
 
+if ($('section.tabsRH .part1 ul').length > 0) {
+  const mediaQuery = window.matchMedia('(max-width: 500px)');
+  function handleMediaQueryChange(event) {
+    if (event.matches) {
+      MyApp.listaMovil2.init();
+    }
+  }
+  handleMediaQueryChange(mediaQuery);
+}
+
 if ($('section.caracteristicas .content').length > 0) {
   MyApp.sliderCaracteristicas.init();
 }
@@ -667,4 +830,20 @@ if ($('section.contentInfoArticulo .part1 .redesCompartir').length > 0) {
 
 if ($('section.experiencia .contadores').length > 0) {
   MyApp.contador.init();
+}
+
+if ($('section.Equipo.lista').length > 0) {
+  MyApp.equipoVerMas.init();
+}
+
+if ($('section.mainPortafolio .container .part2 .listProyectos').length > 0) {
+  MyApp.listaPortafolio.init();
+}
+
+if ($('.categoriasBuscador').length > 0) {
+  MyApp.categoriaBuscador.init();
+}
+
+if ($('section.tabs').length > 0) {
+  MyApp.cambioPageSelect.init();
 }
