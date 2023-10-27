@@ -742,7 +742,7 @@ MyApp = {
       var yourNavigation = $("section.tabs .content");
       stickyDiv = "sticky";
       yourHeader = ($('section.bannerNegocios').height() + 100);
-
+      console.log(yourHeader);
       $(window).scroll(function () {
         if ($(this).scrollTop() > yourHeader) {
           yourNavigation.addClass(stickyDiv);
@@ -751,7 +751,48 @@ MyApp = {
         }
       });
     }
+  },
+  menuStickyPublicaciones: {
+    init: function () {
+      /*
+      var yourNavigation = $("section.listaBlog .content .categorias");
+      stickyDiv = "sticky";
+      yourHeader2 = ($('section.blogTitle').height() + 200);
+      console.log(yourHeader2);
+
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > yourHeader2) {
+          yourNavigation.addClass(stickyDiv);
+        } else {
+          yourNavigation.removeClass(stickyDiv);
+        }
+      });
+      */
+
+      const mediaQuery = window.matchMedia('(max-width: 1280px)');
+      function handleMediaQueryChange(event) {
+        if (event.matches) {
+          $("section.listaBlog .content").stick_in_parent({
+            offset_top: 92,
+            offset_right: 52,
+          });
+        }else{
+          $("section.listaBlog .content").stick_in_parent({
+            offset_top: 100,
+            offset_right: 52,
+          });
+        }
+      }
+      handleMediaQueryChange(mediaQuery);
+
+      
+
+    }
   }
+}
+
+if ($('section.listaBlog').length > 0) {
+  MyApp.menuStickyPublicaciones.init();
 }
 
 if ($('section.tabs').length > 0) {
