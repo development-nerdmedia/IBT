@@ -589,41 +589,24 @@ MyApp = {
       )
 
       tl.add(function () {
-        const numero = document.querySelectorAll(".experiencia .contadores .contador h3 span")
-        const meta = document.querySelectorAll(".experiencia .contadores .contador .meta")
+        const numeros = document.querySelectorAll(".experiencia .contadores .contador h3 span");
+        const metas = document.querySelectorAll(".experiencia .contadores .contador .meta");
+        const duration = 4000;
 
-        const numbermeta = parseInt(meta[0].textContent)
-        let cantidad = 0;
+        for (let i = 0; i < numeros.length; i++) {
+          const numbermeta = parseInt(metas[i].textContent);
+          const increment = (numbermeta / duration) * 10;
+          let cantidad = 0;
 
-        let tiempo = setInterval(() => {
-          cantidad += 1
-          numero[0].textContent = cantidad
-          if (cantidad === numbermeta) {
-            clearInterval(tiempo)
-          }
-        }, 1);
-
-        const numbermeta2 = parseInt(meta[1].textContent)
-        let cantidad2 = 0;
-
-        let tiempo2 = setInterval(() => {
-          cantidad2 += 1
-          numero[1].textContent = cantidad2
-          if (cantidad2 >= numbermeta2) {
-            clearInterval(tiempo2)
-          }
-        }, 1);
-
-        const numbermeta3 = parseInt(meta[2].textContent)
-        let cantidad3 = 0;
-
-        let tiempo3 = setInterval(() => {
-          cantidad3 += 1
-          numero[2].textContent = cantidad3
-          if (cantidad3 === numbermeta3) {
-            clearInterval(tiempo3)
-          }
-        }, 1);
+          const tiempo = setInterval(() => {
+            cantidad += increment;
+            if (cantidad >= numbermeta) {
+              cantidad = numbermeta;
+              clearInterval(tiempo);
+            }
+            numeros[i].textContent = Math.round(cantidad);
+          }, 10);
+        }
       })
     }
   },
@@ -633,7 +616,7 @@ MyApp = {
         const scrollButton = document.querySelector("section.bannerNegocios button");
         const segundaSection = document.querySelector(".bajada");
         scrollButton.addEventListener("click", function () {
-          const offset = segundaSection.offsetTop - 100; // Restamos 50 píxeles
+          const offset = segundaSection.offsetTop - 100;
           window.scrollTo({
             top: offset,
             behavior: "smooth"
@@ -701,6 +684,7 @@ MyApp = {
       document.querySelector(".cabecera").closest(".itemTab").classList.add("open");
 
       const cabeceras = document.querySelectorAll('.cabecera');
+      const tabsRH = document.querySelector(".tabsRH")
       cabeceras.forEach(cabecera => {
         cabecera.addEventListener('click', () => {
           const itemTabs = document.querySelectorAll('.itemTab');
@@ -708,6 +692,11 @@ MyApp = {
             itemTab.classList.remove('open');
           });
           cabecera.parentElement.classList.add('open');
+          const offset = tabsRH.offsetTop - 100; // Restamos 50 píxeles
+          window.scrollTo({
+            top: offset,
+            behavior: "smooth"
+          });
         })
       });
     }
@@ -728,15 +717,49 @@ MyApp = {
       })
     }
   },
-  cambioPageSelect:{
+  cambioPageSelect: {
     init: function () {
-      var select = document.querySelector("#seleccionarPagina");  
-      select.addEventListener("change", function() {
-          var selectedOption = select.options[select.selectedIndex].value;
-          window.location.href = selectedOption;
+      var select = document.querySelector("#seleccionarPagina");
+      select.addEventListener("change", function () {
+        var selectedOption = select.options[select.selectedIndex].value;
+        window.location.href = selectedOption;
+      });
+    }
+  },
+  selectActive: {
+    init: function () {
+      document.addEventListener("click", function (e) {
+        if (e.target.closest("#seleccionarPagina")) {
+          e.target.closest('.lista').classList.toggle("active");
+        } else {
+          document.querySelector('.lista').classList.remove("active");
+        }
+      })
+    }
+  },
+  menuStickyInterna: {
+    init: function () {
+      var yourNavigation = $("section.tabs .content");
+      stickyDiv = "sticky";
+      yourHeader = ($('section.bannerNegocios').height() + 100);
+
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > yourHeader) {
+          yourNavigation.addClass(stickyDiv);
+        } else {
+          yourNavigation.removeClass(stickyDiv);
+        }
       });
     }
   }
+}
+
+if ($('section.tabs').length > 0) {
+  MyApp.menuStickyInterna.init();
+}
+
+if ($('section.tabs select').length > 0) {
+  MyApp.selectActive.init();
 }
 
 if ($('section.bannerNegocios button').length > 0) {

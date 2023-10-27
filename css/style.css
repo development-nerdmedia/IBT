@@ -1325,7 +1325,8 @@ section.accionSocial {
         width: 100%; }
 
 section.bannerSocial {
-  background-color: #B3D8FC; }
+  background-color: #B3D8FC;
+  overflow: hidden; }
   section.bannerSocial .container {
     display: flex;
     justify-content: space-between; }
@@ -1793,8 +1794,11 @@ section.aviso {
     padding-left: 0; }
 
 section.tabs {
-  background-color: #e6f2fe;
-  margin-top: 100px; }
+  margin-top: 100px;
+  height: 65px; }
+  section.tabs .content {
+    background-color: #e6f2fe;
+    z-index: 1; }
   section.tabs .container {
     overflow: hidden; }
   section.tabs .enlaces {
@@ -1827,9 +1831,20 @@ section.tabs {
     section.tabs .enlaces a:last-child {
       margin-right: 0; }
 
+.sticky {
+  position: fixed;
+  top: 105px;
+  left: 0;
+  right: 0;
+  width: 100%; }
+
 body.NuestraCultura section.noticiasRelacionadas {
   background: #E6F2FE;
   padding-top: 100px; }
+  body.NuestraCultura section.noticiasRelacionadas .swiper .swiper-pagination .swiper-pagination-bullet {
+    background-color: #fff; }
+  body.NuestraCultura section.noticiasRelacionadas .swiper .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #007af3; }
 
 body.NuestraCultura section.proyectosInterna .part1 ul li {
   font-family: var(--fuente-vietnam);
@@ -2098,6 +2113,7 @@ section.bannerNosotros {
   padding: 100px 0; }
   section.bannerNosotros .container {
     display: flex;
+    align-items: center;
     grid-column-gap: 100px; }
   section.bannerNosotros .contentImg {
     width: 46.5%;
@@ -2137,8 +2153,8 @@ section.bannerNosotros {
       grid-gap: 10px;
       align-items: center;
       text-decoration: underline; }
-      section.bannerNosotros .contentText a:hover img {
-        animation: moverFlecha 1s infinite; }
+      section.bannerNosotros .contentText a img {
+        width: 20px; }
 
 @keyframes moverFlecha {
   0% {
@@ -2173,7 +2189,8 @@ section.politicasNormativas {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #00355F; }
+        border-bottom: 1px solid #00355F;
+        grid-gap: 30px; }
         section.politicasNormativas .content .part2 .contentPDF .item h3 {
           color: #00355F;
           font-family: var(--fuente-vietnam);
@@ -2512,6 +2529,8 @@ section.contentPDF {
     margin-top: 10px; }
   section.mainContacto .container .part2 .contentImg {
     margin-bottom: 20px; }
+  .itemPilares .text h3 {
+    font-size: 20px; }
   /*end 1600*/ }
 
 @media (max-width: 1550px) {
@@ -2580,6 +2599,8 @@ section.contentPDF {
   /* end 1440 */ }
 
 @media (max-width: 1280px) {
+  .sticky {
+    top: 90px; }
   section.experiencia .contadores:before {
     left: 30.5%; }
   section.bajada .container .contentText .content {
@@ -2710,7 +2731,8 @@ section.contentPDF {
   /* end 1280 */ }
 
 @media (max-width: 1200px) {
-  section.contentPDF .item div span {
+  section.contentPDF .item div span,
+  section.politicasNormativas .content .part2 .contentPDF .item div span {
     display: none !important; }
   section.experiencia .contadores p {
     font-size: 20px; }
@@ -3144,6 +3166,8 @@ section.contentPDF {
         right: 41px;
         top: 50%;
         transform: translateY(-50%); }
+      body.page-sostenibilidad section.tabs .container .lista.active::before {
+        transform: translateY(-50%) rotate(180deg); }
       body.page-sostenibilidad section.tabs .container .lista select {
         display: block;
         color: #00355f;
@@ -3203,6 +3227,14 @@ section.contentPDF {
     section.tabsRH .itemTab .content .part2 .movil {
       display: block; }
   /*end 920*/ }
+
+@media (max-width: 900px) {
+  section.politicasNormativas .content {
+    flex-direction: column;
+    grid-gap: 50px; }
+  section.politicasNormativas .content .part1,
+  section.politicasNormativas .content .part2 {
+    width: 100%; } }
 
 @media (max-width: 890px) {
   section.listaBlog .categorias {
@@ -3438,6 +3470,20 @@ section.contentPDF {
     width: 100%; }
   section.bannerSocial .part2 img {
     left: -29px; }
+  section.infoEmpresa .container .part4, section.infoEmpresa .container .part4 .imgs {
+    flex-direction: column;
+    align-items: start;
+    align-items: flex-start; }
+  section.infoEmpresa .container .part4 {
+    grid-gap: 20px;
+    padding: 20px 25px; }
+  section.infoEmpresa .container .part4 .imgs {
+    grid-gap: 30px; }
+  section.infoEmpresa .container .part4 .imgs div {
+    flex-direction: row;
+    grid-gap: 20px; }
+  section.infoEmpresa .container .part4 .imgs div img {
+    width: 60px; }
   /*768 end*/ }
 
 @media (max-width: 750px) {
@@ -3468,6 +3514,8 @@ section.contentPDF {
     right: 22px;
     top: 50%;
     transform: translateY(-50%); }
+  section.tabs .container .lista.active::before {
+    transform: translateY(-50%) rotate(180deg); }
   section.tabs .container .enlaces {
     display: none; }
   section.tabs .container .lista select {

@@ -1658,6 +1658,7 @@ section.accionSocial{
 
 section.bannerSocial{
   background-color: #B3D8FC;
+  overflow: hidden;
   .container{
     display: flex;
     justify-content: space-between;
@@ -2245,8 +2246,12 @@ section.aviso {
 }
 
 section.tabs {
-  background-color: #e6f2fe;
   margin-top: 100px;
+  height: 65px;
+  .content{
+    background-color: #e6f2fe;
+    z-index: 1;
+  }
   .container{
     overflow: hidden;
   }
@@ -2287,10 +2292,26 @@ section.tabs {
   }
 }
 
+.sticky{
+  position: fixed;
+  top: 105px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+
+
 body.NuestraCultura{
   section.noticiasRelacionadas{
     background: #E6F2FE;
     padding-top: 100px;
+    .swiper .swiper-pagination .swiper-pagination-bullet{
+      background-color: #fff;
+    }
+    .swiper .swiper-pagination .swiper-pagination-bullet-active{
+      background-color: #007af3;
+    }
   }
   section.proyectosInterna{
     .part1{
@@ -2652,6 +2673,7 @@ section.bannerNosotros{
   padding: 100px 0;
   .container{
     display: flex;
+    align-items: center;
     grid-column-gap: 100px;
   }
   .contentImg{
@@ -2699,14 +2721,13 @@ section.bannerNosotros{
       grid-gap: 10px;
       align-items: center;
       text-decoration: underline;
-      &:hover{
-        img{
-          animation: moverFlecha 1s infinite;
-        }
+      img{
+        width: 20px;
       }
     }
   }
 }
+
 
 @keyframes moverFlecha {
   0%{
@@ -2751,6 +2772,7 @@ section.politicasNormativas{
           justify-content: space-between;
           align-items: center;
           border-bottom: 1px solid #00355F;
+          grid-gap: 30px;
           h3{
             color: #00355F;
             font-family: var(--fuente-vietnam);
@@ -3199,6 +3221,9 @@ section.contentPDF{
   section.mainContacto .container .part2 .contentImg {
     margin-bottom: 20px;
   }
+  .itemPilares .text h3{
+    font-size: 20px;
+  }
 
   /*end 1600*/
 }
@@ -3300,6 +3325,9 @@ section.contentPDF{
 }
 
 @media (max-width: 1280px) {
+  .sticky{
+    top: 90px;
+  }
   section.experiencia .contadores:before {
     left: 30.5%;
   }
@@ -3474,7 +3502,8 @@ section.contentPDF{
 }
 
 @media (max-width: 1200px) {
-  section.contentPDF .item div span{
+  section.contentPDF .item div span,
+  section.politicasNormativas .content .part2 .contentPDF .item div span{
     display: none !important;
   }
   section.experiencia .contadores p {
@@ -4043,6 +4072,9 @@ section.contentPDF{
         top: 50%;
         transform: translateY(-50%);
       }
+      &.active::before{
+        transform: translateY(-50%) rotate(180deg);
+      }
       select {
         display: block;
         color: #00355f;
@@ -4124,6 +4156,17 @@ section.contentPDF{
   }
 
   /*end 920*/
+}
+
+@media (max-width: 900px) {
+  section.politicasNormativas .content {
+    flex-direction: column;
+    grid-gap: 50px;
+  }
+  section.politicasNormativas .content .part1,
+  section.politicasNormativas .content .part2 {
+    width: 100%;
+  }
 }
 
 @media (max-width: 890px) {
@@ -4443,6 +4486,28 @@ section.contentPDF{
   section.bannerSocial .part2 img{
     left: -29px;
   }
+
+  section.infoEmpresa .container .part4, section.infoEmpresa .container .part4 .imgs {
+    flex-direction: column;
+    align-items: start;
+    align-items: flex-start;
+  }
+
+  section.infoEmpresa .container .part4 {
+    grid-gap: 20px;
+    padding: 20px 25px;
+  }
+  section.infoEmpresa .container .part4 .imgs {
+    grid-gap: 30px;
+  }
+  section.infoEmpresa .container .part4 .imgs div {
+    flex-direction: row;
+    grid-gap: 20px;
+  }
+  section.infoEmpresa .container .part4 .imgs div img {
+    width: 60px;
+  }
+
   /*768 end*/
 }
 
@@ -4481,6 +4546,9 @@ section.contentPDF{
     right: 22px;
     top: 50%;
     transform: translateY(-50%);
+  }
+  section.tabs .container .lista.active::before{
+    transform: translateY(-50%) rotate(180deg);
   }
   section.tabs .container .enlaces {
     display: none;
