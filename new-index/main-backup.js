@@ -106,73 +106,6 @@ MyApp = {
       });
     }
   },
-  /* nuevo */
-  swiperHome: {
-    init: function () {
-      var swiper = new Swiper(".swiperHome", {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        navigation: {
-          nextEl: "section.home .swiper-button-next",
-          prevEl: "section.home .swiper-button-prev",
-        },
-        pagination: {
-          el: "section.home .swiper-pagination",
-          clickable: true,
-        },
-
-        on: {
-          init: function () {
-            setTimeout(() => {
-              var activeSlide = swiper.slides[swiper.activeIndex];
-              var activeVideo = activeSlide.querySelector('video');
-
-              if (activeVideo) {
-                activeVideo.play();
-              }
-
-            }, 2000);
-            console.log('swiper initialized');
-          },
-
-          slideChange: function () {
-            var allVideos = document.querySelectorAll('video');
-            allVideos.forEach(function (video) {
-              video.currentTime = 0;
-              video.pause();
-              video.muted = true;
-            });
-
-            var activeSlide = swiper.slides[swiper.activeIndex];
-            var activeVideo = activeSlide.querySelector('video');
-            if (activeVideo) {
-              activeVideo.play();
-            }
-          }
-        }
-      });
-
-      const slides = document.querySelectorAll('section.home .swiper-slide');
-
-      // Iterar sobre cada diapositiva
-      slides.forEach(slide => {
-        // Obtener el video y el botón dentro de la diapositiva actual
-        const video = slide.querySelector('video');
-        const unmuteBtn = slide.querySelector('.sound-button');
-
-        // Agregar un evento de clic al botón
-        unmuteBtn.addEventListener('click', function () {
-          // Alternar entre mutear y desmutear el video al hacer clic en el botón
-          video.muted = !video.muted;
-          unmuteBtn.classList.toggle('open', !video.muted);
-          // Actualizar el texto del botón según el estado del video
-          //unmuteBtn.textContent = video.muted ? 'Desmutear' : 'Mutar';
-        });
-      });
-
-    }
-  },
-  /* end nuevo */
   imgStickyProyectoInterna: {
     init: function () {
       $(".proyectosInterna .part2 .img").stick_in_parent({
@@ -487,7 +420,7 @@ MyApp = {
   listaMovil2: {
     init: function () {
 
-      const grupos = document.querySelectorAll('.part1');
+      const grupos = document.querySelectorAll('.tabsRH .part1');
 
       grupos.forEach(grupo => {
         const lista = grupo.querySelector('section.tabsRH .part1 ul');
@@ -770,6 +703,18 @@ MyApp = {
   },
   mostrarBoton: {
     init: function () {
+      if ($(`.contentPDF .item`).length >= 6) {
+        $("#cargarMasModulo").attr("style", "display:flex;");
+      }
+      $(`.item.modulo-mas`).hide();
+      $(`.item.modulo-mas`).slice(0, 5).show(0);
+      $("#cargarMasModulo").click(function (e) {
+        e.preventDefault();
+        $(`.modulo-mas:hidden`).slice(0, 5).slideDown(0);
+        if ($(`.modulo-mas:hidden`).length == 0) {
+          $("#cargarMasModulo").attr("style", "display:none;");
+        }
+      })
     }
   },
   cambioPageSelect: {
@@ -786,6 +731,7 @@ MyApp = {
       if (sessionStorage.getItem("scroll") === "true") {
         window.scrollTo(0, document.querySelector(".tabs").offsetTop - 100);
       }
+
       var selectElement = document.querySelector('#seleccionarPagina');
       selectElement.selectedIndex = 0;
       selectElement.addEventListener('change', (event) => {
@@ -795,10 +741,10 @@ MyApp = {
         }
       })
 
-      if ($('#seleccionarPagina').length > 0) {
-        setTimeout(function () {
-          var text = $('#seleccionarPagina').attr('value');
-          $('#seleccionarPagina').val(text);
+      if($('#seleccionarPagina').length > 0){
+        setTimeout(function() {
+            var text = $('#seleccionarPagina').attr('value');
+            $('#seleccionarPagina').val(text);
         }, 500);
       }
     }
@@ -819,6 +765,7 @@ MyApp = {
       var yourNavigation = $("section.tabs .content");
       stickyDiv = "sticky";
       yourHeader = ($('section.bannerNegocios').height() + 100);
+      console.log(yourHeader);
       $(window).scroll(function () {
         if ($(this).scrollTop() > yourHeader) {
           yourNavigation.addClass(stickyDiv);
@@ -837,15 +784,51 @@ MyApp = {
             offset_top: 92,
             offset_right: 52,
           });
-        } else {
+        }else{
           $("section.listaBlog .content").stick_in_parent({
             offset_top: 100,
             offset_right: 52,
           });
         }
       }
-      handleMediaQueryChange(mediaQuery);
+      handleMediaQueryChange(mediaQuery);   
 
+    }
+  },
+  pageAnimacionCultura: {
+    init: function () {
+      var valorRecuperado = localStorage.getItem('premio');
+
+      if (valorRecuperado == "ir") {
+        var listaItems = document.querySelectorAll('header .navigation .navi .listaMenu li');
+
+        listaItems.forEach(function (item) {
+          var enlace = item.querySelector('a');
+          if (enlace && enlace.textContent.includes('Reconocimiento')) {
+            listaItems.forEach(function (otroItem) {
+              otroItem.classList.remove('select');
+            });
+            item.classList.add('select');
+          }
+        });
+
+        var areaReconocimiento = document.querySelector(".proyectosInterna")
+            const offset = areaReconocimiento.offsetTop - 100; // Restamos 1300 píxeles
+                window.scrollTo({
+                  top: offset,
+                  behavior: "smooth"
+                });
+      }
+      if(valorRecuperado == "noir"){
+        var listaItems = document.querySelectorAll('header .navigation .navi .listaMenu li');
+      
+        listaItems.forEach(function (item) {
+          var enlace = item.querySelector('a');
+          if (enlace && enlace.textContent.includes('Reconocimiento')) {
+            item.classList.remove('select');
+          }
+        });
+      }
     }
   },
   categoriasPoliticas: {
@@ -884,9 +867,9 @@ MyApp = {
                   $("#cargarMasModulo").attr("style", "display:flex;");
                 }
                 /********************** */
-
+                
               } else {
-                item.style.display = 'none';
+                item.style.display = 'none';                
               }
             });
           } else {
@@ -901,10 +884,10 @@ MyApp = {
                 $(`.modulo-mas:hidden`).slice(0, 5).slideDown(0);
                 if ($(`.modulo-mas:hidden`).length == 0) {
                   $("#cargarMasModulo").attr("style", "display:none;");
-                } else {
+                }else {
                   $("#cargarMasModulo").attr("style", "display:flex;");
                 }
-              } else if (h3Text.includes(searchTerm)) {
+              }else if (h3Text.includes(searchTerm)) {
                 /************************/
                 $("#cargarMasModulo").attr("style", "display:flex;");
                 $(`.item.modulo-mas`).hide();
@@ -927,13 +910,13 @@ MyApp = {
           var searchTerm = inputBuscador.value
           if (searchTerm != "") {
             sessionStorage.setItem('categorytitulo', `${searchTerm}`);
-          } else {
+          }else{
             sessionStorage.removeItem('categorytitulo');
           }
-          buscadorInput()
+          buscadorInput()      
         }
 
-        buscarBtn.addEventListener('click', function (e) {
+        buscarBtn.addEventListener('click', function (e) {          
           e.preventDefault();
           enviarForm()
         });
@@ -943,13 +926,12 @@ MyApp = {
           enviarForm()
         });
 
-
         categoriasButtons.forEach(function (button) {
           button.addEventListener('click', function () {
 
             // Si el botón ya tiene la clase 'select', quitarla y mostrar todos los elementos 'item modulo-mas'
             if (button.classList.contains('select')) {
-              button.classList.remove('select');
+              button.classList.remove('select');              
               sessionStorage.removeItem('categoryPais');
             } else {
               // Aplicar clase 'select' al botón clicado y quitarla de los demás
@@ -967,7 +949,7 @@ MyApp = {
           });
         });
 
-        /*************************/
+        /*************************/        
         if ($(`.contentPDF .item`).length >= 5) {
           $("#cargarMasModulo").attr("style", "display:flex;");
         }
@@ -983,14 +965,14 @@ MyApp = {
               $("#cargarMasModulo").attr("style", "display:none;");
             }
           }
-          if (sessionStorage.getItem('categorytitulo') && !sessionStorage.getItem('categoryPais')) {
+          if (sessionStorage.getItem('categorytitulo') && !sessionStorage.getItem('categoryPais')){
             var valorRecuperado = sessionStorage.getItem('categorytitulo');
             $(`.modulo-mas[data-category-titulo="${valorRecuperado}"]:hidden`).slice(0, 5).slideDown(0);
             if ($(`.modulo-mas[data-category-titulo="${valorRecuperado}"]:hidden`).length == 0) {
               $("#cargarMasModulo").attr("style", "display:none;");
             }
           }
-          if (sessionStorage.getItem('categoryPais') && sessionStorage.getItem('categorytitulo')) {
+          if (sessionStorage.getItem('categoryPais') && sessionStorage.getItem('categorytitulo')){
             var valorRecuperado1 = sessionStorage.getItem('categorytitulo');
             var valorRecuperado2 = sessionStorage.getItem('categoryPais');
             $(`.modulo-mas[data-category-pais="${valorRecuperado2}"][data-category-titulo="${valorRecuperado1}"]:hidden`).slice(0, 5).slideDown(0);
@@ -998,7 +980,7 @@ MyApp = {
               $("#cargarMasModulo").attr("style", "display:none;");
             }
           }
-          if (!sessionStorage.getItem('categoryPais') && !sessionStorage.getItem('categorytitulo')) {
+          if (!sessionStorage.getItem('categoryPais') &&  !sessionStorage.getItem('categorytitulo')) {
             $(`.item.modulo-mas`).hide();
             $(`.item.modulo-mas`).slice(0, 5).show(0);
             $(`.modulo-mas:hidden`).slice(0, 5).slideDown(0);
@@ -1010,107 +992,36 @@ MyApp = {
         /************************* */
       });
     }
-  },
-  pageAnimacionCultura: {
-    init: function () {
-      var valorRecuperado = localStorage.getItem('premio');
-
-      if (valorRecuperado == "ir") {
-        var listaItems = document.querySelectorAll('header .navigation .navi .listaMenu li');
-
-        listaItems.forEach(function (item) {
-          var enlace = item.querySelector('a');
-          if (enlace && enlace.textContent.includes('Reconocimiento')) {
-            listaItems.forEach(function (otroItem) {
-              otroItem.classList.remove('select');
-            });
-            item.classList.add('select');
-          }
-        });
-
-        /*
-        var areaReconocimiento = document.getElementById("newPage")
-        const offset = areaReconocimiento.offsetTop;
-        console.log(offset);
-        
-        window.scroll(0, 2900);
-        /*2900*/
-        
-        /*console
-        let currentScroll = window.pageYOffset;
-        console.log(currentScroll);
-
-        //const element = document.querySelector("#newPage");
-        //element.scrollIntoView();
-
-        /*
-        window.addEventListener("scroll", () => {
-
-          let currentScroll = window.pageYOffset;
-          if(offset > currentScroll){}
-        
-        
-        });
-
-
-        /*
-        window.scrollTo({
-          top: offset,
-          behavior: "smooth"
-        });*/        
-
-      }
-      else {
-        var listaItems = document.querySelectorAll('header .navigation .navi .listaMenu li');
-
-        listaItems.forEach(function (item) {
-          var enlace = item.querySelector('a');
-          if (enlace && enlace.textContent.includes('Reconocimiento')) {
-            item.classList.remove('select');
-          }
-        });
-      }
-    }
-  },
+  }
 }
 
 var enlaces = document.querySelectorAll('header .navigation .navi .listaMenu li a');
 
 enlaces.forEach(function (enlace) {
   enlace.addEventListener('click', function (event) {
-    if (event.target.closest("header .navigation .navi .listaMenu li")) {
+    if (event.target.closest("header .navigation .navi .listaMenu li") || event.target.closest("section.tabs .enlaces a")) {
       localStorage.setItem('premio', 'noir');
     }
     if (this.textContent.includes('Reconocimiento')) {
-      //event.preventDefault();
       localStorage.setItem('premio', 'ir');
-      //window.location.href = "http://127.0.0.1:5501/nosotros/nuestra-cultura.html";
-      document.querySelector("").textContent
+      //event.preventDefault();
     }
   });
 });
 
-
-window.addEventListener('beforeunload', function () {
+window.addEventListener('beforeunload', function() {
   // Borrar todos los datos del sessionStorage
   sessionStorage.removeItem('categoryPais');
   sessionStorage.removeItem('categorytitulo');
 });
 
-
-/* nuevo */
-if ($('section.home').length > 0) {
-  MyApp.swiperHome.init();
+if ($('.politicasNormativas').length > 0) {
+  MyApp.categoriasPoliticas.init();
 }
 
 if ($('body.NuestraCultura').length > 0) {
   MyApp.pageAnimacionCultura.init();
 }
-
-if ($('.politicasNormativas').length > 0) {
-  MyApp.categoriasPoliticas.init();
-}
-/* end nuevo */
 
 if ($('section.listaBlog').length > 0) {
   MyApp.menuStickyPublicaciones.init();
@@ -1128,7 +1039,7 @@ if ($('section.bannerNegocios button').length > 0) {
   MyApp.scroll.init();
 }
 
-if ($('.contentPDF .item').length > 0) {
+if ($('body.page-guias-y-politicas .contentPDF .item').length > 0) {
   MyApp.mostrarBoton.init();
 }
 

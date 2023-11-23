@@ -123,8 +123,10 @@
             <div class="container">
                 <div class="part1">
                     <div class="buscador" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                        <button><img src="img/lupa.svg" alt=""></button>
-                        <input type="text" placeholder="Buscar">
+                        <form>
+                            <button class="buscar" id="searchButton"><img src="img/lupa.svg" alt=""></button>
+                            <input type="text" placeholder="Buscar" id="inputBusqueda">
+                        </form>
                     </div>
                     <div class="categoriasBuscador" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                         <div class="item">
@@ -133,12 +135,10 @@
                                 <img src="img/flecha-select.svg" alt="">
                             </div>
                             <div class="cuerpo">
-                                <a href="#" class="select">País 1</a>
-                                <a href="#">País 2</a>
-                                <a href="#">País 3</a>
-                                <a href="#">País 4</a>
-                                <a href="#">País 5</a>
-                                <a href="#">País 6</a>
+                                <button>País 1</button>
+                                    <button>País 2</button>
+                                    <button>País 3</button>
+                                    <button>País 4</button>
                             </div>
                         </div>
                         <div class="item">
@@ -147,12 +147,12 @@
                                 <img src="img/flecha-select.svg" alt="">
                             </div>
                             <div class="cuerpo">
-                                <a href="#" class="select">2023</a>
-                                <a href="#">2022</a>
-                                <a href="#">2021</a>
-                                <a href="#">2020</a>
-                                <a href="#">2019</a>
-                                <a href="#">2018</a>
+                                <button>2023</button>
+                                <button>2022</button>
+                                <button>2021</button>
+                                <button>2020</button>
+                                <button>2019</button>
+                                <button>2018</button>
                             </div>
                         </div>
                         <div class="item">
@@ -161,18 +161,17 @@
                                 <img src="img/flecha-select.svg" alt="">
                             </div>
                             <div class="cuerpo">
-                                <a href="#" class="select">Salud</a>
-                                <a href="#">Infraestructura</a>
-                                <a href="#">Agua</a>
-                                <a href="#">Energía</a>
+                                <button>Salud</button>
+                                <button>Infraestructura</button>
+                                <button>Agua</button>
+                                <button>Energía</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="part2">
                     <div class="listProyectos">
-                        <div class="itemArticulo modulo-mas" data-categoria="Boletines" data-aos="fade-up"
-                            data-aos-duration="1000" data-aos-once="true">
+                        <div class="itemArticulo modulo-mas" data-category="Boletines">
                             <a href="internaPortafolio.html">
                                 <div class="contentImg">
                                     <div class="filtro"></div>
@@ -193,8 +192,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="itemArticulo modulo-mas" data-categoria="Boletines" data-aos="fade-up"
-                            data-aos-duration="1000" data-aos-once="true">
+                        <div class="itemArticulo modulo-mas" data-categoria="Boletines">
                             <a href="internaPortafolio.html">
                                 <div class="contentImg">
                                     <div class="filtro"></div>
@@ -215,8 +213,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="itemArticulo modulo-mas" data-categoria="Boletines" data-aos="fade-up"
-                            data-aos-duration="1000" data-aos-once="true">
+                        <div class="itemArticulo modulo-mas" data-categoria="Boletines">
                             <a href="internaPortafolio.html">
                                 <div class="contentImg">
                                     <div class="filtro"></div>
@@ -239,8 +236,7 @@
                         </div>
                     </div>
                     <div class="btn">
-                        <button class="vermas dorado" id="cargarMasModulo" data-aos="fade-up" data-aos-duration="1000"
-                            data-aos-once="true">
+                        <button class="vermas dorado" id="cargarMasModulo">
                             <span>Ver más</span><span><img src="img/flecha-blanca.svg" alt=""></span>
                         </button>
                     </div>

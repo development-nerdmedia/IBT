@@ -460,6 +460,12 @@ section.home {
   height: 200vh;
   background: rgba(0, 0, 0, 0.1);
   position: relative;
+
+  /*
+  div{
+    pointer-events: none;
+  }
+  */
   .fondo {
     height: 100vh;
     width: 100%;
@@ -502,6 +508,40 @@ section.home {
       clip-path: inset(35%);
       z-index: 1;
     }
+    /* nuevo */
+    .swiper-slide{
+      height: 100vh;
+      position: relative;
+      button{
+        position: absolute;
+        bottom: 83px;
+        left: 100px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        pointer-events: all;
+        img{
+          position: initial;
+          width: auto;
+          min-width: auto;
+          transform: none;
+          pointer-events: none;
+        }
+        img.sin{
+          display: none;
+        }
+        &.open{
+          img.sin{
+            display: block;
+          }          
+          img.con{
+            display: none;
+          }          
+        }
+      }
+    }
+    /* end  nuevo */
   }
   .container {
     height: 100vh;
@@ -511,6 +551,7 @@ section.home {
     align-items: center;
     z-index: 2;
     position: relative;
+    pointer-events: none;
     .content {
       max-width: 50%;
       h1 {
@@ -520,8 +561,10 @@ section.home {
         font-weight: 800;
         line-height: 1;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        pointer-events: all;
       }
       a {
+        pointer-events: all;
         margin-top: 30px;
         color: #fff;
         font-family: var(--fuente-roboto);
@@ -546,7 +589,39 @@ section.home {
           }
         }
       }
+      .flechas{
+        margin-top: 30px;
+        height: 44px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 71px;
+        .swiper-button-prev,
+        .swiper-button-next{
+          position: initial;
+          top: 0;
+          transform: translateY(23px);
+        }
+      }
     }
+  }
+  .swiper-pagination-bullet-active,
+  .swiper-pagination-bullet{
+    background: #fff;
+    width: 8px;
+    height: 8px;
+  }
+  .container.puntos{
+    height: auto;
+    position: fixed;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .swiper-pagination{
+    position: initial;
+    width: auto;
+    pointer-events: all;
   }
 }
 
@@ -602,6 +677,8 @@ section.home {
 
 section.bajada {
   padding: 100px 0;
+  position: relative;
+  z-index: 2;  
   .container {
     padding-left: 75px;
     position: relative;
@@ -660,6 +737,7 @@ body.page-home {
 }
 
 section.negociosHome {
+  z-index: 2;
   position: relative;
   overflow: hidden;
   &::before {
@@ -768,6 +846,8 @@ footer {
   padding-top: 100px;
   background-color: var(--color-azul);
   overflow: hidden;
+  position: relative;
+  z-index: 2;
   .part1 {
     display: flex;
     justify-content: space-between;
@@ -1026,8 +1106,6 @@ body.page-energia {
 }
 
 section.proyectosInterna {
-  position: relative;
-  z-index: -2;
   .container3 {
     display: flex;
   }
@@ -2783,10 +2861,11 @@ section.politicasNormativas{
     font-weight: 700;
   }
   .content{
-    margin-top: 40px;
+    margin-top: 10px;
     display: flex;
     grid-column-gap: 135px;
     .part1{
+      padding-top: 30px;
       flex-shrink: 0;
       width: 300px;      
     }
@@ -2805,9 +2884,6 @@ section.politicasNormativas{
             font-family: var(--fuente-vietnam);
             font-size: 24px;
             font-weight: 700;
-          }
-          &:first-child{
-            padding-top: 0;
           }
           div{
             display: flex;
@@ -2847,8 +2923,10 @@ section.politicasNormativas{
 }
 
 .buscador{
-  display: flex;
-  align-items: stretch;
+  form{
+    display: flex;
+    align-items: stretch;    
+  }
   button{
     background-color: #E6F2FE;
     padding: 15px 17px;
@@ -2929,10 +3007,14 @@ section.politicasNormativas{
       &::-webkit-scrollbar-track {
         background-color: #c4c4c4;
       }
-      a{
+      a, button{
         display: block;
         margin: 20px 0;
         font-size: 20px;
+        color: #00355f;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
         &.select{
           font-weight: 700;
         }
